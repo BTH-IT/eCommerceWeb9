@@ -330,6 +330,10 @@
   display: block;
 }
 
+.sign-out {
+  font-size: 2.4rem;    
+}
+
 @media only screen and (max-width: 1200px) {
   .header__logo-image {
     width: 40px;
@@ -378,7 +382,9 @@
     top: -5px;
   }
 
-  
+  .sign-out {
+    font-size: 2rem;    
+  }
 }
 
 @media only screen and (max-width: 786px) {
@@ -446,6 +452,10 @@
     width: 20px;
     height: 20px;
   }
+
+  .sign-out {
+    font-size: 1.6rem;    
+  }
 }
 
 @media only screen and (max-width: 424px) {
@@ -479,5 +489,9 @@
     font-size: 0.4rem;
     width: 15px;
     height: 15px;
+  }
+
+  .sign-out {
+    font-size: 1.2rem;    
   }
 }

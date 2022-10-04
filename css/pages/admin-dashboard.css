@@ -272,6 +272,7 @@ select {
 
   .users,
   .products,
+  .products-form,
   .stats {
     margin-top: 50px;
   }

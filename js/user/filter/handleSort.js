@@ -10,7 +10,10 @@ sortSelect.addEventListener("click", (e) => {
   dropdownSort.classList.toggle("hidden");
   if (e.target.localName === "li") {
     const textSortSelect = sortSelect.querySelector("span");
-    textSortSelect.innerText = e.target.dataset.value;
+    textSortSelect.innerText =
+      e.target.dataset.value.length > 7
+        ? e.target.dataset.value.slice(0, 7) + "…"
+        : e.target.dataset.value;
     sortValue = e.target.dataset.value.toLowerCase();
     renderProducts();
   }
