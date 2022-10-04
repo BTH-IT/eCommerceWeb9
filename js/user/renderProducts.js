@@ -86,7 +86,7 @@ function renderProductPage(countPage = 1) {
           </div>
           <div class="products__item-info">
             <a
-              href="/product-details.html?=${product.id}"
+              href="/product-details.html?id=${product.id}"
               class="products__item-title"
             >
               ${product.name}
