@@ -22,46 +22,48 @@ function renderCartList() {
   const cartListHTML = cartList
     .map(
       (cart) => `
-    <tr class="cart-list__row">
-      <td class="cart-list__image">
-        <img src=${cart.imagePrimary} alt=""
-          class="cart-list__img">
-      </td>
-      <td class="cart-list__product-name">${cart.name}</td>
-      <td class="cart-list__product-size">${cart.size}</td>
-      <td class="cart-list__unit-price">
-        <span>$${
-          cart.salePercent
-            ? cart.prePrice - (cart.prePrice * cart.salePercent) / 100
-            : cart.prePrice
-        }</span>
-      </td>
-      <td>
-        <div class="cart-list__quantity" data-id="${cart.id}" data-size="${
-        cart.size
-      }">
-          <span class="cart-list__btn-quantity minus">-</span>
-          <input type="number" min="1" value="${
-            cart.count
-          }" class="cart-list__input-quantity">
-          <span class="cart-list__btn-quantity plus">+</span>
-        </div>
-      </td>
-      <td class="cart-list__delete-icon">
-        <span data-id="${cart.id}" data-size="${cart.size}">
-          <i class="fa-solid fa-trash"></i>
-        </span>
-      </td>
-    </tr>
-  `
+        <tr class="cart-list__row">
+          <td class="cart-list__image">
+            <img src=${cart.imagePrimary} alt=""
+              class="cart-list__img">
+          </td>
+          <td class="cart-list__product-name">${cart.name}</td>
+          <td class="cart-list__product-size">${cart.size}</td>
+          <td class="cart-list__unit-price">
+            <span>$${
+              cart.salePercent
+                ? cart.prePrice - (cart.prePrice * cart.salePercent) / 100
+                : cart.prePrice
+            }</span>
+          </td>
+          <td>
+            <div  
+                class="cart-list__quantity"
+                data-id="${cart.id}"
+                data-size="${cart.size}"
+            >
+              <span class="cart-list__btn-quantity minus">-</span>
+              <input
+                type="number"
+                min="1"
+                value="${cart.count}"
+                class="cart-list__input-quantity"
+              >
+              <span class="cart-list__btn-quantity plus">+</span>
+            </div>
+          </td>
+          <td class="cart-list__delete-icon">
+            <span data-id="${cart.id}" data-size="${cart.size}">
+              <i class="fa-solid fa-trash"></i>
+            </span>
+          </td>
+        </tr>
+      `
     )
     .join("");
 
   const total = cartList.reduce((pre, curr) => {
-    const price = curr.salePercent
-      ? curr.prePrice - (curr.prePrice * curr.salePercent) / 100
-      : curr.prePrice;
-
+    const price = curr.salePercent ? curr.salePrice : curr.prePrice;
     return pre + price * curr.count;
   }, 0);
 

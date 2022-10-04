@@ -15,6 +15,7 @@ inputWithIconList.forEach((inputWithIcon) => {
   const eyeIcon = inputWithIcon.querySelector(".fa-eye");
   const eyeSlashIcon = inputWithIcon.querySelector(".fa-eye-slash");
   const inputPassword = inputWithIcon.querySelector("input");
+
   inputWithIcon.addEventListener("click", (e) => {
     if (e.target.className.includes("hide-password")) {
       eyeIcon.classList.remove("hidden");
@@ -45,6 +46,7 @@ function handleSignUp() {
     window.alert("username or password is invalid!!!");
     return;
   }
+
   const userList = getLocalStorage("userList");
   const cartList = getLocalStorage("cartList");
 
@@ -62,6 +64,7 @@ function handleSignUp() {
       ...userSignUp,
       cartList,
     });
+
     setLocalStorage("userList", userList);
     setLocalStorage("cartList", []);
     setLocalStorage("isLogin", true);

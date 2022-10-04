@@ -6,8 +6,8 @@ const sortListEle = queryElement(".products__sort-dropdown");
 const sortListEleHTML = sortList
   .map((sortName) => {
     return `
-      <li data-value="${sortName}">${sortName}</li>
-  `;
+        <li data-value="${sortName}">${sortName}</li>
+    `;
   })
   .join("");
 

@@ -9,6 +9,8 @@ const salePercent = queryElement("#sale-percent");
 const select = queryElement("select");
 const createBtn = queryElement(".create");
 const updateBtn = queryElement(".update");
+const labelPrimary = queryElement("label[for='image-primary']");
+const labelSecondary = queryElement("label[for='image-secondary']");
 
 function renderProductForm(id) {
   updateBtn.classList.remove("hidden");
@@ -16,8 +18,6 @@ function renderProductForm(id) {
 
   const productList = getLocalStorage("productList");
   const productIdx = productList.findIndex((product) => product.id === id);
-  const labelPrimary = queryElement("label[for='image-primary']");
-  const labelSecondary = queryElement("label[for='image-secondary']");
 
   name.value = productList[productIdx].name;
   price.value = productList[productIdx].prePrice;
@@ -50,10 +50,10 @@ function renderProductForm(id) {
 
     setLocalStorage("productList", productList);
 
-    const { filesPrimary } = imagePrimary;
-    const { filesSecondary } = imageSecondary;
+    const { files: filesPrimary } = imagePrimary;
+    const { files: filesSecondary } = imageSecondary;
 
-    if (filesPrimary) {
+    if (filesPrimary[0]) {
       const readerPrimary = new FileReader(imagePrimary);
       readerPrimary.addEventListener("load", () => {
         productList[productIdx]["imagePrimary"] = readerPrimary.result;
@@ -62,7 +62,7 @@ function renderProductForm(id) {
       readerPrimary.readAsDataURL(imagePrimary.files[0]);
     }
 
-    if (filesSecondary) {
+    if (filesSecondary[0]) {
       const readerSecondary = new FileReader(imageSecondary);
       readerSecondary.addEventListener("load", () => {
         productList[productIdx]["imageSecondary"] = readerSecondary.result;
@@ -73,6 +73,29 @@ function renderProductForm(id) {
   }
 
   updateBtn.addEventListener("click", handleUpdate);
+}
+
+function reset() {
+  name.value = "";
+  price.value = "";
+  salePercent.value = "";
+  select.value = "";
+  labelPrimary.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+      stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+    </svg>
+  `;
+  labelSecondary.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+      stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+    </svg>
+  `;
+  imagePrimary.value = "";
+  imageSecondary.value = "";
 }
 
 function handleCreate() {
@@ -116,6 +139,7 @@ function handleCreate() {
 
   readerPrimary.readAsDataURL(imagePrimary.files[0]);
   readerSecondary.readAsDataURL(imageSecondary.files[0]);
+  reset();
 }
 
 name.addEventListener("change", () => validation(name));

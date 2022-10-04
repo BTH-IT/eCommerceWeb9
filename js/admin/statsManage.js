@@ -12,9 +12,7 @@ if (orderList) {
     const typeList = orderList.filter((order) => order.type === type);
     let count = 0;
     const total = typeList.reduce((pre, curr) => {
-      const price = curr.salePercent
-        ? curr.prePrice - (curr.prePrice * curr.salePercent) / 100
-        : curr.prePrice;
+      const price = curr.salePercent ? curr.salePrice : curr.prePrice;
       count += curr.count;
       return pre + price * curr.count;
     }, 0);
@@ -29,22 +27,23 @@ if (orderList) {
   const statsHTML = stats
     .map((stat) => {
       return `
-    <div class="stats__item">
-      <div class="stats__info">
-        <h3 class="stats__title">${stat.type}</h3>
-        <div class="stats__quantity">
-          Quantity: <span>${stat.count}</span>
+        <div class="stats__item">
+          <div class="stats__info">
+            <h3 class="stats__title">${stat.type}</h3>
+            <div class="stats__quantity">
+              Quantity: <span>${stat.count}</span>
+            </div>
+          </div>
+          <div class="stats__total">
+            Total: <span>${stat.total}$</span>
+          </div>
         </div>
-      </div>
-      <div class="stats__total">
-        Total: <span>${stat.total}$</span>
-      </div>
-    </div>
-  `;
+      `;
     })
     .join("");
 
   statsManage.innerHTML = statsHTML;
+
   statTotal.innerText = stats.reduce(
     (pre, curr) => pre + Number(curr.total),
     0

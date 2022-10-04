@@ -3,8 +3,11 @@ import { productList } from "./data.js";
 
 if (!getLocalStorage("productList"))
   setLocalStorage("productList", productList);
+
 if (!getLocalStorage("cartList")) setLocalStorage("cartList", []);
+
 if (!getLocalStorage("orderList")) setLocalStorage("orderList", []);
+
 if (!getLocalStorage("userList")) {
   setLocalStorage("userList", [
     {
@@ -15,6 +18,7 @@ if (!getLocalStorage("userList")) {
     },
   ]);
 }
+
 if (!getLocalStorage("isLogin")) {
   setLocalStorage("isLogin", false);
 }

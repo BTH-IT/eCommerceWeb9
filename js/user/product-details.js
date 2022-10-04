@@ -13,16 +13,15 @@ const relatedProductList = productList.filter(
   (product) => product.type === productDetails.type && product.id !== id
 );
 
-console.log(productDetails);
 productDetailsEle.innerHTML = `
   <div class="product-details__item">
     <div class="product-details__image">
       ${
         productDetails.salePercent
           ? `
-        <span class="product-details__hot-sale sale">Sale</span>
-        <span class="product-details__hot-sale sale-percent">-${productDetails.salePercent}%</span>
-      `
+              <span class="product-details__hot-sale sale">Sale</span>
+              <span class="product-details__hot-sale sale-percent">-${productDetails.salePercent}%</span>
+            `
           : ""
       }
       <div class="product-details__link">
@@ -39,8 +38,7 @@ productDetailsEle.innerHTML = `
       <div class="product-details__item-price">
         <span class="sale-price">$${
           productDetails.salePercent
-            ? productDetails.prePrice -
-              (productDetails.prePrice * productDetails.salePercent) / 100
+            ? productDetails.salePrice
             : productDetails.prePrice
         }</span>
         ${
@@ -101,9 +99,9 @@ const relatedProductListHTML = relatedProductList
         ${
           relatedProduct.salePercent
             ? `
-        <span class="product-details__hot-sale sale">Sale</span>
-        <span class="product-details__hot-sale sale-percent">-${relatedProduct.salePercent}%</span>
-      `
+                <span class="product-details__hot-sale sale">Sale</span>
+                <span class="product-details__hot-sale sale-percent">-${relatedProduct.salePercent}%</span>
+              `
             : ""
         }
         <a href="/product-details.html?id=${
@@ -129,16 +127,13 @@ const relatedProductListHTML = relatedProductList
           ${relatedProduct.name}
         </a>
         <div class="related-products__item-price">
-          <span class="sale-price">$${
-            relatedProduct.salePercent
-              ? relatedProduct.prePrice -
-                (relatedProduct.prePrice * relatedProduct.salePercent) / 100
-              : relatedProduct.prePrice
-          }</span>
           ${
             relatedProduct.salePercent
-              ? `<span class="pre-price">$${relatedProduct.prePrice}</span>`
-              : ""
+              ? `
+                <span class="sale-price">$${relatedProduct.salePrice}</span>
+                <span class="pre-price">$${relatedProduct.prePrice}</span>
+              `
+              : `<span class="pre-price">$${relatedProduct.prePrice}</span>`
           }
         </div>
       </div>

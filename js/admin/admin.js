@@ -81,6 +81,4 @@ if (getLocalStorage("isAdmin") && getLocalStorage("isLogin")) {
     setLocalStorage("isAdmin", false);
     window.location.assign(window.location.origin);
   });
-} else {
-  window.location.assign(window.location.origin);
-}
+} else window.location.assign(window.location.origin);

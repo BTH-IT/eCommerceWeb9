@@ -5,6 +5,7 @@ import {
   setLocalStorage,
 } from "../constant.js";
 
+const modalListBtn = queryAllElement(".btn__modal");
 const usersManage = queryElement(".users-manage");
 const modal = queryElement(".modal");
 
@@ -26,19 +27,18 @@ function renderUserList() {
     .join("");
 
   usersManage.innerHTML = userListHTML;
+
+  const deleteUserListBtn = usersManage.querySelectorAll(".btn--delete");
+
+  deleteUserListBtn.forEach((deleteUserBtn) => {
+    deleteUserBtn.addEventListener("click", () => {
+      modal.dataset.idUser = deleteUserBtn.dataset.id;
+      modal.classList.remove("hidden");
+    });
+  });
 }
 
 renderUserList();
-
-const deleteUserListBtn = usersManage.querySelectorAll(".btn--delete");
-const modalListBtn = queryAllElement(".btn__modal");
-
-deleteUserListBtn.forEach((deleteUserBtn) => {
-  deleteUserBtn.addEventListener("click", () => {
-    modal.dataset.idUser = deleteUserBtn.dataset.id;
-    modal.classList.remove("hidden");
-  });
-});
 
 modalListBtn.forEach((modalBtn) => {
   modalBtn.addEventListener("click", () => {

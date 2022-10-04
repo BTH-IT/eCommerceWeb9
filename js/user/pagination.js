@@ -13,6 +13,7 @@ const paginationRight = queryElement(".pagination__right");
 
 function handleSlicePagination(productHandledList) {
   totalPages = Math.ceil(productHandledList.length / limitProductPage);
+  currentPage = 1;
 
   const slicePagination = [];
   for (let i = 1; i <= totalPages; i++) {

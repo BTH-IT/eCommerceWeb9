@@ -6,10 +6,10 @@ import {
 } from "../constant.js";
 import { renderProductForm } from "./handleFormProduct.js";
 
-const productsManage = queryElement(".products .products-manage");
 const modal = queryElement(".modal");
 const modalListBtn = queryAllElement(".btn__modal");
 const products = queryElement(".products");
+const productsManage = products.querySelector(".products-manage");
 const productsForm = queryElement(".products-form");
 
 function renderProductsManage() {
@@ -17,31 +17,28 @@ function renderProductsManage() {
   const productsHTML = productList
     .map((product) => {
       return `
-    <div class="products-manage__item">
-      <div class="products-manage__info">
-        <div class="products-manage__image">
-          <img
-            src=${product.imagePrimary}
-            alt="" class="products-manage__img">
+        <div class="products-manage__item">
+          <div class="products-manage__info">
+            <div class="products-manage__image">
+              <img
+                src=${product.imagePrimary}
+                alt="" class="products-manage__img">
+            </div>
+            <div class="products-manage__content">
+              <h2 class="products-manage__title">${product.name}</h2>
+              <div class="products-manage__price">
+                $${product.salePercent ? product.salePrice : product.prePrice}
+              </div>
+            </div>
+          </div>
+          <div class="products-manage__method" data-id=${product.id}>
+            <button class="btn btn--update">Update</button>
+            <button class="btn btn--delete">
+              Delete
+            </button>
+          </div>
         </div>
-        <div class="products-manage__content">
-          <h2 class="products-manage__title">${product.name}</h2>
-          <div class="products-manage__price">$${
-            product.salePercent
-              ? product.prePrice -
-                (product.prePrice * product.salePercent) / 100
-              : product.prePrice
-          }</div>
-        </div>
-      </div>
-      <div class="products-manage__method" data-id=${product.id}>
-        <button class="btn btn--update">Update</button>
-        <button class="btn btn--delete">
-          Delete
-        </button>
-      </div>
-    </div>
-  `;
+      `;
     })
     .join("");
 

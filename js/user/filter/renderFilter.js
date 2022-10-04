@@ -6,8 +6,8 @@ const typeProductListEle = queryElement(".products__type-list");
 const typeProductListHTML = typeProductList
   .map((typeProduct) => {
     return `
-      <li>${typeProduct}</li>
-  `;
+        <li>${typeProduct}</li>
+    `;
   })
   .join("");
 

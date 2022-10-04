@@ -21,41 +21,42 @@ function renderCartList() {
   const cartListHTML = cartList
     .map(
       (cart) => `
-    <li class="header__cart-item" data-id="${cart.id}" data-size="${cart.size}">
-      <div class="header__cart-image">
-        <img
-          src=${cart.imagePrimary}
-          alt="" class="header__cart-img">
-      </div>
-      <div class="header__cart-info">
-        <h1 class="header__cart-title">${cart.name}</h1>
-        <div class="header__cart-size">Size: <span>${cart.size}</span></div>
-        <div class="header__cart-price">$${
-          cart.salePercent
-            ? cart.prePrice - (cart.prePrice * cart.salePercent) / 100
-            : cart.prePrice
-        }</div>
-        <div class="header__cart-quantity" data-id="${cart.id}" data-size="${
-        cart.size
-      }">
-          <div class="header__cart-btn minus">-</div>
-          <div class="header__cart-number">${cart.count}</div>
-          <div class="header__cart-btn plus">+</div>
-        </div>
-      </div>
-      <span class="header__cart-btn-delete">
-        <i class="fa-solid fa-trash-can"></i>
-      </span>
-    </li>
-  `
+        <li
+          class="header__cart-item"
+          data-id="${cart.id}"
+          data-size="${cart.size}"
+        >
+          <div class="header__cart-image">
+            <img
+              src=${cart.imagePrimary}
+              alt="" class="header__cart-img">
+          </div>
+          <div class="header__cart-info">
+            <h1 class="header__cart-title">${cart.name}</h1>
+            <div class="header__cart-size">Size: <span>${cart.size}</span></div>
+            <div class="header__cart-price">
+              $${cart.salePercent ? cart.salePrice : cart.prePrice}
+            </div>
+            <div
+              class="header__cart-quantity"
+              data-id="${cart.id}"
+              data-size="${cart.size}"
+            >
+              <div class="header__cart-btn minus">-</div>
+              <div class="header__cart-number">${cart.count}</div>
+              <div class="header__cart-btn plus">+</div>
+            </div>
+          </div>
+          <span class="header__cart-btn-delete" data-id="${cart.id}>
+            <i class="fa-solid fa-trash-can"></i>
+          </span>
+        </li>
+      `
     )
     .join("");
 
   const total = cartList.reduce((pre, curr) => {
-    const price = curr.salePercent
-      ? curr.prePrice - (curr.prePrice * curr.salePercent) / 100
-      : curr.prePrice;
-
+    const price = curr.salePercent ? curr.salePrice : curr.prePrice;
     return pre + price * curr.count;
   }, 0);
 
@@ -90,9 +91,8 @@ function renderCartList() {
 
       if (cartList[cartIdx].count === 1) {
         cartList.splice(cartIdx, 1);
-      } else {
-        cartList[cartIdx].count--;
-      }
+      } else cartList[cartIdx].count--;
+
       renderCartList();
     });
   });
@@ -112,20 +112,11 @@ function renderCartList() {
 
   deleteBtn.forEach((delBtn) => {
     delBtn.addEventListener("click", (e) => {
-      let id, size, cartIdx;
-      if (e.target.localName === "span") {
-        id = e.target.parentElement.dataset.id;
-        size = e.target.parentElement.dataset.size;
-        cartIdx = cartList.findIndex(
-          (cart) => cart.id === Number(id) && cart.size === size
-        );
-      } else {
-        id = e.target.parentElement.parentElement.dataset.id;
-        size = e.target.parentElement.parentElement.dataset.size;
-        cartIdx = cartList.findIndex(
-          (cart) => cart.id === Number(id) && cart.size === size
-        );
-      }
+      const id = e.target.dataset.id;
+      const size = e.target.dataset.size;
+      const cartIdx = cartList.findIndex(
+        (cart) => cart.id === Number(id) && cart.size === size
+      );
 
       cartList.splice(cartIdx, 1);
       renderCartList();

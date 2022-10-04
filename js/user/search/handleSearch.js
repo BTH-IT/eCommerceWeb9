@@ -24,14 +24,14 @@ function handleSearch(value, element) {
     const suggestListHTML = suggestList
       .map((suggest) => `<li>${suggest.name.toLowerCase()}</li>`)
       .join("");
+
     suggestEle.innerHTML = suggestListHTML;
-  } else {
-    suggestEle.innerHTML = "";
-  }
+  } else suggestEle.innerHTML = "";
 }
 
 searchInputPC.addEventListener("keyup", (e) => {
   handleSearch(e.target.value, searchPC);
+
   if (e.code === "Enter") {
     searchValue = e.target.value;
     renderProducts();
@@ -50,15 +50,20 @@ searchInputPC.onfocus = () => {
 
 suggestPC.addEventListener("click", (e) => {
   if (e.target.localName !== "li") return;
+
   searchInputPC.value = e.target.innerText;
   searchValue = searchInputPC.value;
+
   handleSearch(searchInputPC.value, searchPC);
+
   suggestPC.classList.add("hidden");
+
   renderProducts();
 });
 
 searchInputMobile.addEventListener("keyup", (e) => {
   handleSearch(e.target.value, searchMobile);
+
   if (e.code === "Enter") {
     searchValue = e.target.value;
     suggestMobile.classList.add("hidden");
@@ -68,10 +73,14 @@ searchInputMobile.addEventListener("keyup", (e) => {
 
 suggestMobile.addEventListener("click", (e) => {
   if (e.target.localName !== "li") return;
+
   searchInputMobile.value = e.target.innerText;
   searchValue = searchInputMobile.value;
+
   handleSearch(searchInputMobile.value, searchMobile);
+
   suggestMobile.classList.add("hidden");
+
   renderProducts();
 });
 

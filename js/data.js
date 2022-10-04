@@ -2,7 +2,7 @@ const productList = [
   {
     id: 1,
     name: "Balo đa năng 1",
-    prePrice: 130,
+    prePrice: 10,
     salePercent: 13,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "balo",
@@ -14,7 +14,7 @@ const productList = [
   {
     id: 2,
     name: "Balo đa năng 2",
-    prePrice: 80,
+    prePrice: 10,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "balo",
     imagePrimary:
@@ -25,7 +25,7 @@ const productList = [
   {
     id: 3,
     name: "Balo đa năng 3",
-    prePrice: 150,
+    prePrice: 10,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "balo",
     imagePrimary:
@@ -36,7 +36,7 @@ const productList = [
   {
     id: 4,
     name: "Balo đa năng 4",
-    prePrice: 150,
+    prePrice: 15,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "balo",
     imagePrimary:
@@ -47,7 +47,7 @@ const productList = [
   {
     id: 5,
     name: "Balo đa năng 5",
-    prePrice: 150,
+    prePrice: 15,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "balo",
     imagePrimary:
@@ -58,7 +58,7 @@ const productList = [
   {
     id: 6,
     name: "Balo đa năng 6",
-    prePrice: 120,
+    prePrice: 12,
     salePercent: 17,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "balo",
@@ -70,7 +70,7 @@ const productList = [
   {
     id: 7,
     name: "balo đa năng 7",
-    prePrice: 82,
+    prePrice: 8,
     salePercent: 13,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "balo",
@@ -82,7 +82,7 @@ const productList = [
   {
     id: 8,
     name: "Balo đa năng 8",
-    prePrice: 82,
+    prePrice: 9,
     salePercent: 13,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "balo",
@@ -239,6 +239,7 @@ const productList = [
     name: "QUẦN JEANS ỐNG RỘNG ĐẸP 1",
     prePrice: 20,
     salePercent: 20,
+
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "pant",
     imagePrimary:
@@ -249,7 +250,7 @@ const productList = [
   {
     id: 23,
     name: "Quần Baggy Kaki 1",
-    prePrice: 20,
+    prePrice: 18,
     salePercent: 20,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "pant",
@@ -261,7 +262,7 @@ const productList = [
   {
     id: 24,
     name: "Quần Baggy Kaki 2",
-    prePrice: 20,
+    prePrice: 16,
     salePercent: 20,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "pant",
@@ -274,7 +275,7 @@ const productList = [
     id: 25,
     name: "QUẦN Jogger 1",
     prePrice: 20,
-    salePercent: 20,
+    salePercent: 19,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "pant",
     imagePrimary:
@@ -286,7 +287,7 @@ const productList = [
     id: 26,
     name: "QUẦN Jogger 2",
     prePrice: 20,
-    salePercent: 20,
+    salePercent: 15,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "pant",
     imagePrimary:
@@ -321,8 +322,7 @@ const productList = [
   {
     id: 29,
     name: "QUẦN Jogger 4",
-    prePrice: 25,
-    salePercent: 15,
+    prePrice: 20,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "pant",
     imagePrimary:
@@ -333,8 +333,7 @@ const productList = [
   {
     id: 30,
     name: "QUẦN Jogger 5",
-    prePrice: 25,
-    salePercent: 20,
+    prePrice: 21,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "pant",
     imagePrimary:
@@ -345,8 +344,7 @@ const productList = [
   {
     id: 31,
     name: "QUẦN Jogger 6",
-    prePrice: 25,
-    salePercent: 15,
+    prePrice: 13,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "pant",
     imagePrimary:
@@ -357,7 +355,7 @@ const productList = [
   {
     id: 32,
     name: "QUẦN Jogger 7",
-    prePrice: 6,
+    prePrice: 14,
     salePercent: 20,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "pant",
@@ -367,6 +365,13 @@ const productList = [
       "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Quan-jogger-2-DarkGrey-12-ZiZoou-Store.jpg?v=1655716580",
   },
 ];
+
+productList.forEach((product) => {
+  if (product.salePercent) {
+    product["salePrice"] =
+      product.prePrice - (product.prePrice * product.salePercent) / 100;
+  }
+});
 
 const typeProductList = ["balo", "T-shirt", "pant"];
 
