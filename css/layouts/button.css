@@ -9,7 +9,25 @@
   border-radius: 8px;
   transition: all 0.2s ease;
   cursor: pointer;
-  
+}
+
+.btn.btn--sign {
+  width: 100%;
+  border: none;
+  border-radius: 0px;
+  color: white;
+  background-color: black;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 20px 0;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.btn.btn--sign:hover {
+  background-color: var(--red-500);
+  color: white;
 }
 
 .btn.primary {
@@ -75,15 +93,10 @@
 
 /* Tablet */
 @media only screen and (max-width: 992px) {
-
   .btn {
     font-size: 1rem;
     padding: 10px 15px;
   }
-}
-
-@media only screen and (max-width: 768px) {
-
 }
 
 /* Mobile */

@@ -47,7 +47,7 @@ function renderCartList() {
               <div class="header__cart-btn plus">+</div>
             </div>
           </div>
-          <span class="header__cart-btn-delete" data-id="${cart.id}>
+          <span class="header__cart-btn-delete" data-id="${cart.id}">
             <i class="fa-solid fa-trash-can"></i>
           </span>
         </li>

@@ -296,6 +296,13 @@
   display: none;
 }
 
+.header__view-cart h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 20px 0;
+}
+
 .header__input-mobile {
   position: absolute;
   top: 100%;
