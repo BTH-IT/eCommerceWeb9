@@ -154,24 +154,26 @@ clearBtn.addEventListener("click", () => {
 });
 
 buyBtn.addEventListener("click", () => {
-  const orderList = getLocalStorage("orderList");
+  if (getLocalStorage("isLogin")) {
+    const orderList = getLocalStorage("orderList");
 
-  cartList.forEach((cart) => {
-    const orderIdx = orderList.findIndex(
-      (order) => order.id === cart.id && order.size === cart.size
-    );
+    cartList.forEach((cart) => {
+      const orderIdx = orderList.findIndex(
+        (order) => order.id === cart.id && order.size === cart.size
+      );
 
-    if (orderIdx !== -1) {
-      orderList[orderIdx].count += cart.count;
-    } else {
-      orderList.push(cart);
-    }
-  });
+      if (orderIdx !== -1) {
+        orderList[orderIdx].count += cart.count;
+      } else {
+        orderList.push(cart);
+      }
+    });
 
-  cartList.splice(0, cartList.length);
-  setLocalStorage("cartList", cartList);
-  setLocalStorage("orderList", orderList);
-  renderCartList();
+    cartList.splice(0, cartList.length);
+    setLocalStorage("cartList", cartList);
+    setLocalStorage("orderList", orderList);
+    renderCartList();
+  } else window.location.assign(window.location.origin + "/sign-in");
 });
 
 renderCartList();

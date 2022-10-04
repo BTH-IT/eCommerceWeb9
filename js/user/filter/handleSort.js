@@ -1,4 +1,5 @@
 import { queryElement } from "../../constant.js";
+import { renderProducts } from "../renderProducts.js";
 
 const sortSelect = queryElement(".products__sort-input");
 const dropdownSort = sortSelect.querySelector(".products__sort-dropdown");
