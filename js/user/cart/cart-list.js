@@ -175,7 +175,7 @@ buyBtn.addEventListener("click", () => {
     setLocalStorage("cartList", cartList);
     setLocalStorage("orderList", orderList);
     renderCartList();
-  } else window.location.assign(window.location.origin + "/sign-in");
+  } else window.location.assign(window.location.origin + "/sign-in.html");
 });
 
 renderCartList();
