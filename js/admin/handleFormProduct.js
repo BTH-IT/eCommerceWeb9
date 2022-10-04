@@ -174,4 +174,4 @@ select.addEventListener("click", () => validation(select));
 
 createBtn.addEventListener("click", handleCreate);
 
-export { renderProductForm };
+export { renderProductForm, reset };

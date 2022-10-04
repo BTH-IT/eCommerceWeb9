@@ -68,6 +68,7 @@ if (getLocalStorage("isAdmin") && getLocalStorage("isLogin")) {
     updateBtn.classList.add("hidden");
     productsForm.classList.remove("hidden");
     productsManage.classList.add("hidden");
+    reset();
   });
 
   backProductManageBtn.addEventListener("click", () => {
