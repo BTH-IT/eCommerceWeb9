@@ -1,4 +1,5 @@
 import { getLocalStorage, queryElement, setLocalStorage } from "../constant.js";
+import { reset } from "./handleFormProduct.js";
 import { renderProductsManage } from "./productManage.js";
 
 if (getLocalStorage("isAdmin") && getLocalStorage("isLogin")) {
