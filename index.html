@@ -12,7 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/pages/home.css">
   <title>Nine Group Shop</title>
 </head>
 
@@ -36,6 +36,8 @@
               d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
           </svg>
         </span>
+        <ul class="header__input-suggest hidden">
+        </ul>
       </div>
       <span class="header__search-icon">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -44,51 +46,33 @@
             d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
         </svg>
       </span>
-      <div class="header__cart-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-          stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-        </svg>
-        <div class="header__count-products">99+</div>
+      <div class="header__cart">
+        <a href="/cart-list.html" class="header__cart-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </svg>
+          <div class="header__count-products"></div>
+        </a>
         <div class="header__view-cart">
-          <ul class="header__cart-list">
-            <li class="header__cart-item">
-              <div class="header__cart-image">
-                <img
-                  src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=388&q=80"
-                  alt="" class="header__cart-img">
-              </div>
-              <div class="header__cart-info">
-                <h1 class="header__cart-title">T-shirt for women Jhon hardy women's legend</h1>
-                <div class="header__cart-price">$695</div>
-                <div class="header__cart-quantity">
-                  <div class="header__cart-btn minus">-</div>
-                  <div class="header__cart-number">1</div>
-                  <div class="header__cart-btn plus">+</div>
-                </div>
-              </div>
-              <span class="header__cart-btn-delete">
-                <i class="fa-solid fa-trash-can"></i>
-              </span>
-            </li>
-          </ul>
-          <div class="header__total-cart">
-            <span>Cart Subtotal : </span>
-            <span>$1197</span>
-          </div>
-          <button class="btn btn--cart">View more and buy</button>
+
         </div>
       </div>
       <div class="header__auth">
-        <a href="#" class="btn btn--a primary">Sign In</a>
-        <a href="#" class="btn btn--a secondary">Sign Up</a>
+        <a href="./sign-in.html" class="btn btn--a primary sign-in">Sign In</a>
+        <a href="./sign-up.html" class="btn btn--a secondary sign-up">Sign Up</a>
+        <a href="/" class="sign-out hidden">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
       </div>
     </div>
-    <div class="header__input-mobile">
+    <div class="header__input-mobile hidden">
       <input type="text">
+      <ul class="header__input-suggest">
+      </ul>
     </div>
-
+    </div>
   </header>
   <section id="products" class="products">
     <div class="products__container">
@@ -97,25 +81,21 @@
         <i class="fa-solid fa-table-list"></i>
       </div>
       <div class="products__handle">
-        <button class="btn secondary btn__filter">
+        <button class="btn btn__filter">
           <i class="fa-solid fa-filter"></i>
           Filter
         </button>
         <div class="products__sort-select">
           Sort by
           <div class="products__sort-input">
-            Select sort
+            <span>Default</span>
             <i class="fa-solid fa-chevron-down"></i>
-            <ul class="products__sort-dropdown">
-              <li>HTML</li>
-              <li>Css</li>
-              <li>Javascripts</li>
-              <li>HTML</li>
+            <ul class="products__sort-dropdown hidden">
             </ul>
           </div>
         </div>
       </div>
-      <div class="products__filter">
+      <div class="products__filter hidden">
         <div class="products__col">
           <h1 class="products__col-title">price</h1>
           <div class="products__col-content">
@@ -133,368 +113,11 @@
         <div class="products__col">
           <h1 class="products__col-title">product type</h1>
           <ul class="products__type-list">
-            <li class="active">assorted</li>
-            <li>box</li>
-            <li>pant</li>
-            <li>shirt</li>
-            <li>table</li>
-            <li>table-lamp</li>
-            <li>watch</li>
-          </ul>
-        </div>
-        <div class="products__col">
-          <h1 class="products__col-title">brand</h1>
-          <ul class="products__type-list">
-            <li class="active">brothers</li>
-            <li>hatil</li>
-            <li>navana</li>
-            <li>nike</li>
-            <li>table</li>
-            <li>table-lamp</li>
-            <li>otobi</li>
-            <li>raggery</li>
-            <li>rokomari</li>
-          </ul>
-        </div>
-        <div class="products__col">
-          <h1 class="products__col-title">color</h1>
-          <ul class="products__type-list">
-            <li class="active">black</li>
-            <li>blue</li>
-            <li>brown</li>
-            <li>cyan</li>
-            <li>gold</li>
-            <li>gray</li>
-            <li>green</li>
-            <li>magenta</li>
-            <li>orange</li>
-            <li>pink</li>
-            <li>purple</li>
-            <li>red</li>
-            <li>violet</li>
-            <li>white</li>
-            <li>yellow</li>
-          </ul>
-        </div>
-        <div class="products__col">
-          <h1 class="products__col-title">material</h1>
-          <ul class="products__type-list">
-            <li class="active">glass</li>
-            <li>partex</li>
-            <li>steel</li>
-            <li>wood</li>
-          </ul>
-        </div>
-        <div class="products__col">
-          <h1 class="products__col-title">size</h1>
-          <ul class="products__type-list">
-            <li class="active">XS</li>
-            <li>M</li>
-            <li>L</li>
-            <li>XL</li>
-            <li>X</li>
-            <li>ML</li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="products__item-list table-list">
-      <div class="products__item">
-        <div class="products__image-hover">
-          <span class="products__hot-sale sale">Sale</span>
-          <span class="products__hot-sale sale-percent">-13%</span>
-          <a href="#" class="products__link">
-            <img src="https://cdn.shopify.com/s/files/1/0067/6016/9531/products/niru-01_large.png?v=1531367604" alt=""
-              class="products__img primary">
-            <img src="https://cdn.shopify.com/s/files/1/0067/6016/9531/products/niru-02_large.png?v=1531367605" alt=""
-              class="products__img secondary">
-          </a>
-          <div class="products__image-hovered">
-            <span class="products__item-cart">
-              <i class="fa-solid fa-cart-plus"></i>
-            </span>
-            <span class="products__item-heart">
-              <i class="fa-solid fa-heart"></i>
-            </span>
-            <span class="products__item-eye">
-              <i class="fa-solid fa-eye"></i>
-            </span>
-          </div>
-        </div>
-        <div class="products__item-info">
-          <a href="#" class="products__item-title">
-            ACCUSANTTIUM DOLOREMQUE
-          </a>
-          <div class="products__item-price">
-            <span class="sale-price">$123</span>
-            <span class="pre-price">$456</span>
-          </div>
-          <p class="products__item-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sint repellendus autem numquam quam
-            voluptatum molestias mollitia excepturi reiciendis enim minima beatae, inventore veritatis unde quas illo
-            labore porro id!
-          </p>
-        </div>
-      </div>
-      <div class="products__item">
-        <div class="products__image-hover">
-          <span class="products__hot-sale sale">Sale</span>
-          <span class="products__hot-sale sale-percent">-13%</span>
-          <a href="#" class="products__link">
-            <img src="https://cdn.shopify.com/s/files/1/0067/6016/9531/products/niru-01_large.png?v=1531367604" alt=""
-              class="products__img primary">
-            <img src="https://cdn.shopify.com/s/files/1/0067/6016/9531/products/niru-02_large.png?v=1531367605" alt=""
-              class="products__img secondary">
-          </a>
-          <div class="products__image-hovered">
-            <span class="products__item-cart">
-              <i class="fa-solid fa-cart-plus"></i>
-            </span>
-            <span class="products__item-heart">
-              <i class="fa-solid fa-heart"></i>
-            </span>
-            <span class="products__item-eye">
-              <i class="fa-solid fa-eye"></i>
-            </span>
-          </div>
-        </div>
-        <div class="products__item-info">
-          <a href="#" class="products__item-title">
-            ACCUSANTTIUM DOLOREMQUE
-          </a>
-          <div class="products__item-price">
-            <span class="sale-price">$123</span>
-            <span class="pre-price">$456</span>
-          </div>
-          <p class="products__item-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sint repellendus autem numquam quam
-            voluptatum molestias mollitia excepturi reiciendis enim minima beatae, inventore veritatis unde quas illo
-            labore porro id!
-          </p>
-        </div>
-      </div>
-      <div class="products__item">
-        <div class="products__image-hover">
-          <span class="products__hot-sale sale">Sale</span>
-          <span class="products__hot-sale sale-percent">-13%</span>
-          <a href="#" class="products__link">
-            <img src="https://cdn.shopify.com/s/files/1/0067/6016/9531/products/niru-01_large.png?v=1531367604" alt=""
-              class="products__img primary">
-            <img src="https://cdn.shopify.com/s/files/1/0067/6016/9531/products/niru-02_large.png?v=1531367605" alt=""
-              class="products__img secondary">
-          </a>
-          <div class="products__image-hovered">
-            <span class="products__item-cart">
-              <i class="fa-solid fa-cart-plus"></i>
-            </span>
-            <span class="products__item-heart">
-              <i class="fa-solid fa-heart"></i>
-            </span>
-            <span class="products__item-eye">
-              <i class="fa-solid fa-eye"></i>
-            </span>
-          </div>
-        </div>
-        <div class="products__item-info">
-          <a href="#" class="products__item-title">
-            ACCUSANTTIUM DOLOREMQUE
-          </a>
-          <div class="products__item-price">
-            <span class="sale-price">$123</span>
-            <span class="pre-price">$456</span>
-          </div>
-          <p class="products__item-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sint repellendus autem numquam quam
-            voluptatum molestias mollitia excepturi reiciendis enim minima beatae, inventore veritatis unde quas illo
-            labore porro id!
-          </p>
-        </div>
-      </div>
-      <div class="products__item">
-        <div class="products__image-hover">
-          <span class="products__hot-sale sale">Sale</span>
-          <span class="products__hot-sale sale-percent">-13%</span>
-          <a href="#" class="products__link">
-            <img src="https://cdn.shopify.com/s/files/1/0067/6016/9531/products/niru-01_large.png?v=1531367604" alt=""
-              class="products__img primary">
-            <img src="https://cdn.shopify.com/s/files/1/0067/6016/9531/products/niru-02_large.png?v=1531367605" alt=""
-              class="products__img secondary">
-          </a>
-          <div class="products__image-hovered">
-            <span class="products__item-cart">
-              <i class="fa-solid fa-cart-plus"></i>
-            </span>
-            <span class="products__item-heart">
-              <i class="fa-solid fa-heart"></i>
-            </span>
-            <span class="products__item-eye">
-              <i class="fa-solid fa-eye"></i>
-            </span>
-          </div>
-        </div>
-        <div class="products__item-info">
-          <a href="#" class="products__item-title">
-            ACCUSANTTIUM DOLOREMQUE
-          </a>
-          <div class="products__item-price">
-            <span class="sale-price">$123</span>
-            <span class="pre-price">$456</span>
-          </div>
-          <p class="products__item-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sint repellendus autem numquam quam
-            voluptatum molestias mollitia excepturi reiciendis enim minima beatae, inventore veritatis unde quas illo
-            labore porro id!
-          </p>
-        </div>
-      </div>
-      <div class="products__item">
-        <div class="products__image-hover">
-          <span class="products__hot-sale sale">Sale</span>
-          <span class="products__hot-sale sale-percent">-13%</span>
-          <a href="#" class="products__link">
-            <img src="https://cdn.shopify.com/s/files/1/0067/6016/9531/products/niru-01_large.png?v=1531367604" alt=""
-              class="products__img primary">
-            <img src="https://cdn.shopify.com/s/files/1/0067/6016/9531/products/niru-02_large.png?v=1531367605" alt=""
-              class="products__img secondary">
-          </a>
-          <div class="products__image-hovered">
-            <span class="products__item-cart">
-              <i class="fa-solid fa-cart-plus"></i>
-            </span>
-            <span class="products__item-heart">
-              <i class="fa-solid fa-heart"></i>
-            </span>
-            <span class="products__item-eye">
-              <i class="fa-solid fa-eye"></i>
-            </span>
-          </div>
-        </div>
-        <div class="products__item-info">
-          <a href="#" class="products__item-title">
-            ACCUSANTTIUM DOLOREMQUE
-          </a>
-          <div class="products__item-price">
-            <span class="sale-price">$123</span>
-            <span class="pre-price">$456</span>
-          </div>
-          <p class="products__item-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sint repellendus autem numquam quam
-            voluptatum molestias mollitia excepturi reiciendis enim minima beatae, inventore veritatis unde quas illo
-            labore porro id!
-          </p>
-        </div>
-      </div>
-      <div class="products__item">
-        <div class="products__image-hover">
-          <span class="products__hot-sale sale">Sale</span>
-          <span class="products__hot-sale sale-percent">-13%</span>
-          <a href="#" class="products__link">
-            <img src="https://cdn.shopify.com/s/files/1/0067/6016/9531/products/niru-01_large.png?v=1531367604" alt=""
-              class="products__img primary">
-            <img src="https://cdn.shopify.com/s/files/1/0067/6016/9531/products/niru-02_large.png?v=1531367605" alt=""
-              class="products__img secondary">
-          </a>
-          <div class="products__image-hovered">
-            <span class="products__item-cart">
-              <i class="fa-solid fa-cart-plus"></i>
-            </span>
-            <span class="products__item-heart">
-              <i class="fa-solid fa-heart"></i>
-            </span>
-            <span class="products__item-eye">
-              <i class="fa-solid fa-eye"></i>
-            </span>
-          </div>
-        </div>
-        <div class="products__item-info">
-          <a href="#" class="products__item-title">
-            ACCUSANTTIUM DOLOREMQUE
-          </a>
-          <div class="products__item-price">
-            <span class="sale-price">$123</span>
-            <span class="pre-price">$456</span>
-          </div>
-          <p class="products__item-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sint repellendus autem numquam quam
-            voluptatum molestias mollitia excepturi reiciendis enim minima beatae, inventore veritatis unde quas illo
-            labore porro id!
-          </p>
-        </div>
-      </div>
-      <div class="products__item">
-        <div class="products__image-hover">
-          <span class="products__hot-sale sale">Sale</span>
-          <span class="products__hot-sale sale-percent">-13%</span>
-          <a href="#" class="products__link">
-            <img src="https://cdn.shopify.com/s/files/1/0067/6016/9531/products/niru-01_large.png?v=1531367604" alt=""
-              class="products__img primary">
-            <img src="https://cdn.shopify.com/s/files/1/0067/6016/9531/products/niru-02_large.png?v=1531367605" alt=""
-              class="products__img secondary">
-          </a>
-          <div class="products__image-hovered">
-            <span class="products__item-cart">
-              <i class="fa-solid fa-cart-plus"></i>
-            </span>
-            <span class="products__item-heart">
-              <i class="fa-solid fa-heart"></i>
-            </span>
-            <span class="products__item-eye">
-              <i class="fa-solid fa-eye"></i>
-            </span>
-          </div>
-        </div>
-        <div class="products__item-info">
-          <a href="#" class="products__item-title">
-            ACCUSANTTIUM DOLOREMQUE
-          </a>
-          <div class="products__item-price">
-            <span class="sale-price">$123</span>
-            <span class="pre-price">$456</span>
-          </div>
-          <p class="products__item-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sint repellendus autem numquam quam
-            voluptatum molestias mollitia excepturi reiciendis enim minima beatae, inventore veritatis unde quas illo
-            labore porro id!
-          </p>
-        </div>
-      </div>
-      <div class="products__item">
-        <div class="products__image-hover">
-          <span class="products__hot-sale sale">Sale</span>
-          <span class="products__hot-sale sale-percent">-13%</span>
-          <a href="#" class="products__link">
-            <img src="https://cdn.shopify.com/s/files/1/0067/6016/9531/products/niru-01_large.png?v=1531367604" alt=""
-              class="products__img primary">
-            <img src="https://cdn.shopify.com/s/files/1/0067/6016/9531/products/niru-02_large.png?v=1531367605" alt=""
-              class="products__img secondary">
-          </a>
-          <div class="products__image-hovered">
-            <span class="products__item-cart">
-              <i class="fa-solid fa-cart-plus"></i>
-            </span>
-            <span class="products__item-heart">
-              <i class="fa-solid fa-heart"></i>
-            </span>
-            <span class="products__item-eye">
-              <i class="fa-solid fa-eye"></i>
-            </span>
-          </div>
-        </div>
-        <div class="products__item-info">
-          <a href="#" class="products__item-title">
-            ACCUSANTTIUM DOLOREMQUE
-          </a>
-          <div class="products__item-price">
-            <span class="sale-price">$123</span>
-            <span class="pre-price">$456</span>
-          </div>
-          <p class="products__item-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sint repellendus autem numquam quam
-            voluptatum molestias mollitia excepturi reiciendis enim minima beatae, inventore veritatis unde quas illo
-            labore porro id!
-          </p>
-        </div>
-      </div>
+    <div class="products__item-list table-cell">
     </div>
   </section>
   <section class="pagination">
@@ -502,46 +125,65 @@
       <i class="fa-solid fa-arrow-left"></i>
     </span>
     <ul class="pagination__list">
-      <li class="pagination__item active">1</li>
-      <li class="pagination__item">2</li>
-      <li class="pagination__item">3</li>
     </ul>
     <span class="pagination__right">
       <i class="fa-solid fa-arrow-right"></i>
     </span>
   </section>
   <footer class="footer">
-    <div class="footer__infomation">
-      <div class="footer__infomation-col">
-        <h1 class="footer__infomation-title">About us</h1>
-        <ul class="footer__infomation-list">
-          <li class="footer__infomation-item">street</li>
-          <li class="footer__infomation-item">phone</li>
-          <li class="footer__infomation-item">email</li>
-          <li class="footer__infomation-item">facebook</li>
-        </ul>
-      </div>
-      <div class="footer__infomation-col link">
-        <h1 class="footer__infomation-title">Information</h1>
-        <ul class="footer__infomation-list">
-          <li class="footer__infomation-item">Delivery infomation</li>
-          <li class="footer__infomation-item">privacy policy</li>
-          <li class="footer__infomation-item">terms & conditions</li>
-          <li class="footer__infomation-item">contact us</li>
-        </ul>
-      </div>
-      <div class="footer__infomation-col link">
-        <h1 class="footer__infomation-title">My account</h1>
-        <ul class="footer__infomation-list">
-          <li class="footer__infomation-item">my account</li>
-          <li class="footer__infomation-item">checkout</li>
-          <li class="footer__infomation-item">cart</li>
-          <li class="footer__infomation-item">wishlist</li>
-        </ul>
-      </div>
-    </div>
     <p class="footer__copyright">Copyright © 2022 HasThemes | Built with Beshop by HasThemes.</p>
   </footer>
+  <section class="modal hidden">
+    <div class="modal__select-size">
+      <span class="modal__close-icon">
+        <i class="fa-solid fa-xmark"></i>
+      </span>
+      <h1 class="modal__size-heading">Size</h1>
+      <div>
+        <input type="radio" name="size" id="xs" value="xs" hidden checked>
+        <label for="xs" class="modal__size-label">xs</label>
+
+        <input type="radio" name="size" id="s" value="s" hidden>
+        <label for="s" class="modal__size-label">s</label>
+
+        <input type="radio" name="size" id="m" value="m" hidden>
+        <label for="m" class="modal__size-label">m</label>
+
+        <input type="radio" name="size" id="l" value="l" hidden>
+        <label for="l" class="modal__size-label">l</label>
+
+        <input type="radio" name="size" id="xl" value="xl" hidden>
+        <label for="xl" class="modal__size-label">xl</label>
+
+        <input type="radio" name="size" id="2xl" value="2xl" hidden>
+        <label for="2xl" class="modal__size-label">2xl</label>
+
+        <input type="radio" name="size" id="3xl" value="3xl" hidden>
+        <label for="3xl" class="modal__size-label">3xl</label>
+
+        <input type="radio" name="size" id="4xl" value="4xl" hidden>
+        <label for="4xl" class="modal__size-label">4xl</label>
+
+        <input type="radio" name="size" id="5xl" value="5xl" hidden>
+        <label for="5xl" class="modal__size-label">5xl</label>
+      </div>
+      <button class="btn btn--filter btn__modal">Add to card</button>
+    </div>
+    <div class="overlay"></div>
+  </section>
+  <script type="module" src="./js/initLocalStorage.js"></script>
+  <script type="module" src="./js/user/renderProducts.js"></script>
+  <script type="module" src="./js/user/filter/renderFilter.js"></script>
+  <script type="module" src="./js/user/filter/renderSort.js"></script>
+  <script type="module" src="./js/user/cart/renderCart.js"></script>
+  <script type="module" src="./js/user/search/handleSearch.js"></script>
+  <script type="module" src="./js/user/filter/handleFilter.js"></script>
+  <script type="module" src="./js/user/filter/handleSort.js"></script>
+  <script type="module" src="./js/user/cart/handleCart.js"></script>
+  <script type="module" src="./js/user/sign/handleSignHeader.js"></script>
+  <script type="module" src="./js/user/pagination.js"></script>
+  <script type="module" src="./js/user/home.js"></script>
+  <script type="module" src="./js/user/modal.js"></script>
 </body>
 
 </html>

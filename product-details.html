@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="./images/logo.png" />
+  <script src="https://kit.fontawesome.com/10c30652a2.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/pages/product-details.css">
+  <link rel="stylesheet" href="./css/layouts/modal.css">
+  <title>Product details</title>
+</head>
+
+<body>
+  <header class="header">
+    <a href="/" class="header__logo">
+      <div class="header__logo-image">
+        <img src="./images/logo.png" alt="G9" class="header__logo-img">
+      </div>
+      <div class="header__logo-text">
+        <span>9G</span>Shop
+      </div>
+    </a>
+    <div class="header__nav">
+      <div class="header__cart">
+        <a href="/cart-list.html" class="header__cart-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </svg>
+          <div class="header__count-products"></div>
+        </a>
+        <div class="header__view-cart">
+        </div>
+      </div>
+      <div class="header__auth">
+        <a href="./sign-in.html" class="btn btn--a primary sign-in">Sign In</a>
+        <a href="./sign-up.html" class="btn btn--a secondary sign-up">Sign Up</a>
+        <a href="/" class="sign-out hidden">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+  <section id="product-details" class="product-details">
+  </section>
+  <section id="related-products" class="related-products">
+    <h1 class="related-products__heading">Related products</h1>
+    <div class="related-products__list">
+    </div>
+  </section>
+  <footer class="footer">
+    <p class="footer__copyright">Copyright © 2022 HasThemes | Built with Beshop by HasThemes.</p>
+  </footer>
+  <section class="modal hidden">
+    <div class="modal__select-size">
+      <span class="modal__close-icon">
+        <i class="fa-solid fa-xmark"></i>
+      </span>
+      <h1 class="modal__size-heading">Size</h1>
+      <div>
+        <input type="radio" name="size-modal" id="xs-modal" value="xs" hidden checked>
+        <label for="xs-modal" class="modal__size-label">xs</label>
+
+        <input type="radio" name="size-modal" id="s-modal" value="s" hidden>
+        <label for="s-modal" class="modal__size-label">s</label>
+
+        <input type="radio" name="size-modal" id="m-modal" value="m" hidden>
+        <label for="m-modal" class="modal__size-label">m</label>
+
+        <input type="radio" name="size-modal" id="l-modal" value="l" hidden>
+        <label for="l-modal" class="modal__size-label">l</label>
+
+        <input type="radio" name="size-modal" id="xl-modal" value="xl" hidden>
+        <label for="xl-modal" class="modal__size-label">xl</label>
+
+        <input type="radio" name="size-modal" id="2xl-modal" value="2xl" hidden>
+        <label for="2xl-modal" class="modal__size-label">2xl</label>
+
+        <input type="radio" name="size-modal" id="3xl-modal" value="3xl" hidden>
+        <label for="3xl-modal" class="modal__size-label">3xl</label>
+
+        <input type="radio" name="size-modal" id="4xl-modal" value="4xl" hidden>
+        <label for="4xl-modal" class="modal__size-label">4xl</label>
+
+        <input type="radio" name="size-modal" id="5xl-modal" value="5xl" hidden>
+        <label for="5xl-modal" class="modal__size-label">5xl</label>
+      </div>
+      <button class="btn btn--filter btn__modal">Add to card</button>
+    </div>
+    <div class="overlay"></div>
+  </section>
+  <script type="module" src="./js/user/cart/renderCart.js"></script>
+  <script type="module" src="./js/user/product-details.js"></script>
+  <script type="module" src="./js/user/cart/handleCart.js"></script>
+  <script type="module" src="./js/user/sign/handleSignHeader.js"></script>
+  <script type="module" src="./js/user/modal.js"></script>
+</body>
+
+</html>

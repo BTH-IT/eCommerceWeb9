@@ -1,0 +1,12 @@
+@import "../reset.css";
+@import "../variables.css";
+@import "../layouts/button.css";
+@import "../layouts/header.css";
+@import "../layouts/products.css";
+@import "../layouts/pagination.css";
+@import "../layouts/footer.css";
+@import "../layouts/modal.css";
+
+.liked {
+  display: none;
+}

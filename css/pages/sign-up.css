@@ -1,0 +1,28 @@
+@import "../layouts/form.css";
+
+.sign-up {
+  margin: 100px auto;
+  width: 100%;
+  padding: 0 10px;
+  max-width: 500px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  margin-bottom: 100px;
+  letter-spacing: -1px;
+}
+
+.ask {
+  margin-bottom: 20px;
+}
+
+.ask a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--red-400);
+}

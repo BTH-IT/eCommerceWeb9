@@ -46,19 +46,22 @@
   border: 1px solid var(--gray-300);
   cursor: pointer;
   position: relative;
+  min-width: 140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .products__sort-dropdown {
   position: absolute;
-  top: calc(100% + 5px);
-  left: 0;
+  top: calc(100% + 10px);
+  right: 0;
   padding: 10px 0;
   background-color: white;
-  width: 100%;
+  width: calc(100% + 100%);
   max-height: 200px;
   overflow-y: auto;
   border: 1px solid var(--gray-300);
-  display: none;
   z-index: 99;
 }
 
@@ -78,7 +81,16 @@
   padding: 7px 14px;
   text-transform: uppercase;
   font-size: 1rem;
-  }
+  color: var(--red-500);
+  background-color: transparent;
+  border: 1px solid var(--red-500);
+}
+
+.btn.btn__filter.active {
+  color: white;
+  background-color: var(--red-500);
+  border: 1px solid var(--red-500);
+}
 
 .products__filter {
   width: 100%;
@@ -94,7 +106,7 @@
   overflow-y: auto;
   top: 100%;
   z-index: 9;
-  display: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .products__col-title {
@@ -104,10 +116,6 @@
   margin-bottom: 20px;
   border-left: 3px solid black;
   font-weight: 600;
-}
-
-.products__col {
-  margin-top: 50px;
 }
 
 .products__col:first-child {
@@ -188,10 +196,13 @@
   height: 100%;
 }
 
-.table-cell .products__image-hover {
+.products__image-hover {
   position: relative;
-  width: 100%;
   height: 400px;
+}
+
+.table-cell .products__image-hover {
+  width: 100%;
 }
 
 .table-cell .products__item-desc {
@@ -205,9 +216,7 @@
 }
 
 .table-list .products__image-hover {
-  position: relative;
   width: 300px;
-  height: 400px;
   flex-shrink: 0;
 }
 
@@ -248,8 +257,8 @@
 .products__image-hovered {
   position: absolute;
   bottom: -10px;
-  width: 80%;
-  height: 65px;
+  width: 60%;
+  height: 50px;
   left: 50%;
   background-color: white;
   transform: translateX(-50%);
@@ -278,20 +287,17 @@
   color: white;
 }
 
-.products__image-hover:hover > .products__link .products__img.secondary,
-.table-list .products__item:hover .products__image-hover > .products__link .products__img.secondary {
+.products__item:hover .products__image-hover > .products__link .products__img.secondary {
   opacity: 1;
   visibility: visible;
 }
 
-.products__image-hover:hover > .products__link .products__img.primary,
-.table-list .products__item:hover .products__image-hover > .products__link .products__img.primary {
+.products__item:hover .products__image-hover > .products__link .products__img.primary {
   opacity: 0;
   visibility: hidden;
 }
 
-.products__image-hover:hover > .products__image-hovered,
-.table-list .products__item:hover .products__image-hovered {
+.products__item:hover .products__image-hovered {
   bottom: 10px;
   visibility: visible;
   opacity: 1;
@@ -321,8 +327,7 @@
   transition: all 0.2s linear;
 }
 
-.products__item-title:hover,
-.table-list > .products__item-title:hover {
+.products__item-title:hover {
   color: var(--red-500);
 }
 

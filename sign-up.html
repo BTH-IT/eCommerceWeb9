@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="./images/logo.png" />
+  <script src="https://kit.fontawesome.com/10c30652a2.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/pages/sign-up.css">
+  <title>SIGN UP</title>
+</head>
+
+<body>
+  <section class="sign-up">
+    <a href="/" class="header__logo">
+      <div class="header__logo-image">
+        <img src="./images/logo.png" alt="G9" class="header__logo-img">
+      </div>
+      <div class="header__logo-text">
+        <span>9G</span>Shop
+      </div>
+    </a>
+    <form class="form">
+      <div class="input">
+        <label for="username" class="label">Username</label>
+        <input type="text" id="username" placeholder="Enter your username..." rules="require">
+        <span class="error"></span>
+      </div>
+      <div class="input">
+        <label for="password" class="label">Password</label>
+        <div class="input-with-icon">
+          <input type="password" id="password" placeholder="Enter your password..." rules="require|max-10">
+          <i class="fa-solid fa-eye-slash hide-password"></i>
+          <i class="fa-solid fa-eye hidden show-password"></i>
+        </div>
+        <span class="error"></span>
+      </div>
+      <div class="input">
+        <label for="confirm-password" class="label">Comfirm Password</label>
+        <div class="input-with-icon">
+          <input type="password" id="confirm-password" placeholder="Enter your password..."
+            rules="require|max-10|confirm">
+          <i class="fa-solid fa-eye-slash hide-password"></i>
+          <i class="fa-solid fa-eye hidden show-password"></i>
+        </div>
+        <span class="error"></span>
+      </div>
+      <h2 class="ask">You have an account? <a href="/sign-in.html">Sign In</a></h2>
+      <button class="btn btn--sign">Sign Up</button>
+    </form>
+  </section>
+  <script type="module" src="/js/user/sign/sign-up.js"></script>
+</body>
+
+</html>

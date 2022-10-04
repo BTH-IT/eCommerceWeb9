@@ -1,0 +1,413 @@
+@import "../reset.css";
+@import "../variables.css";
+@import "../layouts/button.css";
+@import "../layouts/form.css";
+@import "../layouts/modal.css";
+
+.side-bar {
+  width: 100%;
+  background-color: #18181b;
+  color: white;
+  padding: 20px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.side-bar__heading {
+  font-size: 2.2rem;
+  text-align: center;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.side-bar__heading span {
+  color: var(--red-500);  
+}
+
+.side-bar__list {
+  display: flex;
+  align-items: center;
+}
+
+.side-bar__item {
+  padding: 10px;
+  margin: 0 10px;
+  cursor: pointer;
+  color: var(--gray-100);
+}
+
+.side-bar__item i{
+  margin-right: 10px;
+  font-size: 1rem;
+
+}
+
+.side-bar__item.active {
+  color: var(--red-400);
+}
+
+.users,
+.products,
+.products-form,
+.stats {
+  padding: 20px;
+  margin-top: 100px;
+}
+
+.users__heading,
+.stats__heading {
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 25px;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.products__heading {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+}
+
+.users-manage {
+  font-size: 1.6rem;
+}
+
+.users-manage__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.users-manage__item:first-child {
+  border-top: none;
+}
+
+.users-manage__item:last-child {
+  border-bottom: none;
+}
+
+/* ----- */
+
+.products-manage__item {
+  margin-bottom: 20px;
+}
+
+.products__heading-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.products__btn {
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  color: var(--red-500);
+  border: 1px solid var(--red-500);
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.products__btn:hover {
+  background-color: var(--red-500);
+  color: white;
+}
+
+.products-manage__item,
+.products-manage__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.products-manage__image {
+  width: 100px;
+  height: 150px;
+}
+
+.products-manage__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.products-manage__title {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.products-manage__price {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* ------- */
+
+.stats__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.stats__info {
+  font-size: 1.6rem;
+}
+
+.stats__title {
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.stats__quantity {
+  font-weight: 400;
+}
+
+.stats__total {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+hr {
+  margin: 20px 0 10px 0;
+}
+
+.stats-all-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.btn.btn--delete {
+  outline: none;
+  border: none;
+  background-color: var(--red-600);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.btn.btn--delete:hover {
+  background-color: black;
+  color: var(--red-600);
+}
+
+.btn.btn--update {
+  outline: none;
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn.btn--update:hover {
+  background-color: var(--red-500);
+}
+/* ------------ */
+select {
+  padding: 10px;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.modal__size-heading {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.modal__select-size {
+  white-space: normal;
+  padding: 30px;
+}
+
+/* Tablet */
+@media only screen and (max-width: 992px) {
+
+  .side-bar__heading {
+    font-size: 2rem;
+  }
+
+  .stats__info {
+    font-size: 1.2rem;
+  }
+
+  .stats__total {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .stats-all-total {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 786px) {
+
+  .side-bar {
+    padding: 10px 20px;
+  }
+
+  .users,
+  .products,
+  .stats {
+    margin-top: 50px;
+  }
+
+  .users__heading,
+  .products__heading,
+  .stats__heading {
+    font-size: 1.6rem;
+  }
+
+  .side-bar__item {
+    padding: 10px;
+  }
+  
+  .side-bar__item,
+  .side-bar__item i {
+    font-size: 0.8rem;
+  }
+
+  .side-bar__heading {
+    font-size: 1.4rem;
+  }
+
+  .stats__info {
+    font-size: 1rem;
+  }
+
+  .stats__total {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .stats-all-total {
+    font-size: 1rem;
+  }
+
+  .products-manage__title {
+    font-size: 1.2rem;
+  }
+
+  .products-manage__price {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile */
+@media only screen and (max-width: 576px) {
+  .side-bar {
+    padding: 10px;
+  }
+
+  .side-bar__item {
+    font-size: 0.6rem;
+    padding: 5px;
+    margin: 0 5px;
+  }
+
+  .side-bar__heading {
+    font-size: 0.8rem;
+  }
+
+  .products-manage__item {
+    gap: 10px;
+  }
+
+  .products__heading {
+    font-size: 1.4rem;
+  }
+
+  .products__btn {
+    padding: 5px 10px;
+    font-size: 0.6rem;
+  }
+
+  .stats__item {
+    margin-bottom: 20px;
+  }
+
+  .products-manage__method {
+    gap: 10px;
+  }
+
+  .products-manage__item {
+    flex-direction: column;
+  }
+
+  .products-manage__info {
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .products-manage__title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .products-manage__price {
+    font-size: 1rem;
+  }
+
+  .username {
+    font-size: 1rem;
+  }
+
+  .users-manage__item .btn.btn--delete {
+    padding: 6px 8px;
+  }
+}
+
+@media only screen and (max-width: 424px) {
+  .products-manage__title {
+    font-size: 1rem;
+  }
+
+  .products-manage__price {
+    font-size: 0.8rem;
+  }
+
+  .products__heading {
+    font-size: 1rem;
+  }
+
+  .products__btn {
+    font-size: 0.4rem;
+  }
+
+  .stats__info {
+    font-size: 0.4rem;
+  }
+
+  .stats__total {
+    font-size: 0.4rem;
+  }
+
+  .stats-all-total {
+    font-size: 0.6rem;
+  }
+}
