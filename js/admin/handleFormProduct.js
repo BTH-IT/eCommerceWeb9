@@ -1,5 +1,5 @@
 import { getLocalStorage, queryElement, setLocalStorage } from "../constant.js";
-import { validation } from "../users/sign/validation.js";
+import { validation } from "../user/sign/validation.js";
 
 const name = queryElement("#name");
 const imagePrimary = queryElement("#image-primary");
