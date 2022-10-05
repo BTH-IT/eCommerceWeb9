@@ -133,7 +133,7 @@ const relatedProductListHTML = relatedProductList
                 <span class="sale-price">$${relatedProduct.salePrice}</span>
                 <span class="pre-price">$${relatedProduct.prePrice}</span>
               `
-              : `<span class="pre-price">$${relatedProduct.prePrice}</span>`
+              : `<span class="sale-price">$${relatedProduct.prePrice}</span>`
           }
         </div>
       </div>

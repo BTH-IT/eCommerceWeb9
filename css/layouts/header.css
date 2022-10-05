@@ -296,7 +296,7 @@
   display: none;
 }
 
-.header__view-cart h1 {
+.header__view-cart .header__cart-empty {
   text-align: center;
   font-size: 2rem;
   font-weight: 500;

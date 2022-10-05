@@ -13,7 +13,7 @@ const cartList = getLocalStorage("cartList");
 
 function renderCartList() {
   if (cartList.length <= 0) {
-    table.innerHTML = "<h1>Cart is empty!!!</h1>";
+    table.innerHTML = "<h1 class='cart-empty'>Cart is empty!!!</h1>";
     totalPrice.innerText = "$0";
     setLocalStorage("cartList", cartList);
     return;

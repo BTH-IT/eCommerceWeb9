@@ -385,6 +385,10 @@
     width: 200px;
     height: 300px;
   }
+
+  .products__filter {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 /* Mobile */
@@ -392,6 +396,7 @@
   .products {
     margin-top: 70px;
   }
+  
   .products__item-list.table-cell {
     grid-template-columns: repeat(1, 1fr);
   }

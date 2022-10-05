@@ -12,7 +12,8 @@ const countCart = queryElement(".header__count-products");
 
 function renderCartList() {
   if (cartList.length <= 0) {
-    viewCartEle.innerHTML = "<h1>Cart is empty!!!</h1>";
+    viewCartEle.innerHTML =
+      "<h1 class='header__cart-empty'>Cart is empty!!!</h1>";
     countCart.classList.add("hidden");
     setLocalStorage("cartList", cartList);
     return;
