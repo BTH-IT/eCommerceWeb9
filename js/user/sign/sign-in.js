@@ -51,8 +51,9 @@ function handleSignIn() {
   );
 
   if (userIdx !== -1) {
-    setLocalStorage("isLogin", true);
-    setLocalStorage("isAdmin", userList[userIdx].isAdmin);
+    userList[userIdx].cartList = getLocalStorage("cartList");
+    setLocalStorage("currentUser", userList[userIdx]);
+    setLocalStorage("cartList", []);
     if (userList[userIdx].isAdmin) {
       window.location.assign(window.location.origin + "/admin-dashboard.html");
     } else {

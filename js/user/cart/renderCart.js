@@ -3,12 +3,17 @@ import {
   queryAllElement,
   queryElement,
   setLocalStorage,
+  updateCartList,
 } from "../../constant.js";
-
-const cartList = getLocalStorage("cartList");
 
 const viewCartEle = queryElement(".header__view-cart");
 const countCart = queryElement(".header__count-products");
+const currentUser = getLocalStorage("currentUser");
+if (currentUser) {
+  setLocalStorage("cartList", currentUser.cartList);
+}
+
+const cartList = getLocalStorage("cartList");
 
 function renderCartList() {
   if (cartList.length <= 0) {
@@ -16,6 +21,7 @@ function renderCartList() {
       "<h1 class='header__cart-empty'>Cart is empty!!!</h1>";
     countCart.classList.add("hidden");
     setLocalStorage("cartList", cartList);
+    updateCartList(cartList);
     return;
   }
 
@@ -124,6 +130,7 @@ function renderCartList() {
     });
   });
   setLocalStorage("cartList", cartList);
+  updateCartList(cartList);
 }
 
 renderCartList();

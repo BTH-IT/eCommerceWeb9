@@ -43,11 +43,19 @@
 .side-bar__item i{
   margin-right: 10px;
   font-size: 1rem;
+}
 
+.side-bar__item i:last-child{
+  margin-right: 0;
 }
 
 .side-bar__item.active {
   color: var(--red-400);
+}
+
+.go-home a {
+  text-decoration: none;
+  color: white;
 }
 
 .users,
@@ -384,6 +392,10 @@ select {
 }
 
 @media only screen and (max-width: 424px) {
+  .side-bar__item {
+    padding: 0;
+  }
+
   .products-manage__title {
     font-size: 1rem;
   }

@@ -67,8 +67,7 @@ function handleSignUp() {
 
     setLocalStorage("userList", userList);
     setLocalStorage("cartList", []);
-    setLocalStorage("isLogin", true);
-    setLocalStorage("isAdmin", userSignUp.isAdmin);
+    setLocalStorage("currentUser", userList[userIdx]);
     window.location.assign(window.location.origin);
   } else {
     window.alert("account is already exists.");

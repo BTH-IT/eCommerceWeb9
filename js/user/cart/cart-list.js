@@ -3,12 +3,17 @@ import {
   queryAllElement,
   queryElement,
   setLocalStorage,
+  updateCartList,
 } from "../../constant.js";
 
 const table = queryElement(".cart-list");
 const totalPrice = queryElement(".cart-list__total-price");
 const clearBtn = queryElement(".clear");
 const buyBtn = queryElement(".buy");
+const currentUser = getLocalStorage("currentUser");
+if (currentUser) {
+  setLocalStorage("cartList", currentUser.cartList);
+}
 const cartList = getLocalStorage("cartList");
 
 function renderCartList() {
@@ -16,6 +21,7 @@ function renderCartList() {
     table.innerHTML = "<h1 class='cart-empty'>Cart is empty!!!</h1>";
     totalPrice.innerText = "$0";
     setLocalStorage("cartList", cartList);
+    updateCartList(cartList);
     return;
   }
 
@@ -30,11 +36,7 @@ function renderCartList() {
           <td class="cart-list__product-name">${cart.name}</td>
           <td class="cart-list__product-size">${cart.size}</td>
           <td class="cart-list__unit-price">
-            <span>$${
-              cart.salePercent
-                ? cart.prePrice - (cart.prePrice * cart.salePercent) / 100
-                : cart.prePrice
-            }</span>
+            <span>$${cart.salePercent ? cart.salePrice : cart.prePrice}</span>
           </td>
           <td>
             <div  
@@ -147,16 +149,18 @@ function renderCartList() {
     });
   });
   setLocalStorage("cartList", cartList);
+  updateCartList(cartList);
 }
 
 clearBtn.addEventListener("click", () => {
   cartList.splice(0, cartList.length);
   setLocalStorage("cartList", cartList);
+  updateCartList(cartList);
   renderCartList();
 });
 
 buyBtn.addEventListener("click", () => {
-  if (getLocalStorage("isLogin")) {
+  if (currentUser) {
     const orderList = getLocalStorage("orderList");
 
     cartList.forEach((cart) => {
@@ -174,6 +178,7 @@ buyBtn.addEventListener("click", () => {
     cartList.splice(0, cartList.length);
     setLocalStorage("cartList", cartList);
     setLocalStorage("orderList", orderList);
+    updateCartList(cartList);
     renderCartList();
   } else window.location.assign(window.location.origin + "/sign-in.html");
 });

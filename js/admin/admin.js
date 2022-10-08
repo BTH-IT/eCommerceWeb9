@@ -1,8 +1,15 @@
-import { getLocalStorage, queryElement, setLocalStorage } from "../constant.js";
+import {
+  getLocalStorage,
+  queryAllElement,
+  queryElement,
+  setLocalStorage,
+} from "../constant.js";
 import { reset } from "./handleFormProduct.js";
 import { renderProductsManage } from "./productManage.js";
 
-if (getLocalStorage("isAdmin") && getLocalStorage("isLogin")) {
+const currentUser = getLocalStorage("currentUser");
+
+if (currentUser && currentUser?.isAdmin) {
   const usersManage = queryElement(".users");
   const productsManage = queryElement(".products");
   const statsManage = queryElement(".stats");
@@ -75,12 +82,15 @@ if (getLocalStorage("isAdmin") && getLocalStorage("isLogin")) {
   backProductManageBtn.addEventListener("click", () => {
     productsForm.classList.add("hidden");
     productsManage.classList.remove("hidden");
+    const errorList = queryAllElement(".error");
+    errorList.forEach((error) => {
+      error.innerText = "";
+    });
     renderProductsManage();
   });
 
   signOut.addEventListener("click", () => {
-    setLocalStorage("isLogin", false);
-    setLocalStorage("isAdmin", false);
+    setLocalStorage("currentUser", null);
     window.location.assign(window.location.origin);
   });
 } else window.location.assign(window.location.origin);

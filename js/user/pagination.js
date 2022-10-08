@@ -36,7 +36,7 @@ function renderPagination(idx = 1, pages = limitPagination) {
   for (idx; idx <= pages; idx++) {
     paginationList.push(
       `<li class="pagination__item ${
-        idx === 1 ? "active" : ""
+        currentPage === idx ? "active" : ""
       }" data-page=${idx}>${idx}</li>`
     );
   }
@@ -46,14 +46,6 @@ function renderPagination(idx = 1, pages = limitPagination) {
     if (e.target.localName !== "li") return;
     handleMovingPage(e.target);
   });
-
-  if (paginationList.length === 1) paginationRight.classList.add("disable");
-  else paginationRight.classList.remove("disable");
-
-  const activeElement = paginationListEle.querySelector(".active");
-  if (Number(activeElement?.dataset.page) === 1) {
-    paginationLeft.classList.add("disable");
-  }
 }
 
 function addAndRemoveActive(item) {
@@ -87,12 +79,13 @@ function handlePreviousPage() {
 
   if (currentPage % limitPagination === 0) {
     renderPagination(currentPage - limitPagination + 1, currentPage);
+  } else {
+    const activeEle = paginationListEle.querySelector(
+      `[data-page='${currentPage}']`
+    );
+    addAndRemoveActive(activeEle);
   }
 
-  const activeEle = paginationListEle.querySelector(
-    `[data-page='${currentPage}']`
-  );
-  addAndRemoveActive(activeEle);
   renderProductPage(currentPage);
   window.scrollTo(0, 0);
 }
@@ -102,11 +95,12 @@ function handleNextPage() {
     paginationRight?.classList.add("disable");
     return;
   }
+  paginationLeft?.classList.remove("disable");
 
   currentPage++;
+
   if (currentPage === totalPages) paginationRight?.classList.add("disable");
   else paginationRight?.classList.remove("disable");
-  paginationLeft?.classList.remove("disable");
 
   if ((currentPage - 1) % limitPagination === 0) {
     if (totalPages - currentPage < limitPagination)

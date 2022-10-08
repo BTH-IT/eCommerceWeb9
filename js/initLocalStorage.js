@@ -15,14 +15,11 @@ if (!getLocalStorage("userList")) {
       username: "bth3103",
       password: "03012003",
       isAdmin: true,
+      cartList: [],
     },
   ]);
 }
 
-if (!getLocalStorage("isLogin")) {
-  setLocalStorage("isLogin", false);
-}
-
-if (!getLocalStorage("isAdmin")) {
-  setLocalStorage("isAdmin", false);
+if (!getLocalStorage("currentUser")) {
+  setLocalStorage("currentUser", null);
 }
