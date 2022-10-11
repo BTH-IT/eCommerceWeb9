@@ -15,6 +15,9 @@ function handleSlicePagination(productHandledList) {
   totalPages = Math.ceil(productHandledList.length / limitProductPage);
   currentPage = 1;
 
+  paginationLeft.classList.add("disable");
+  paginationRight.classList.remove("disable");
+
   const slicePagination = [];
   for (let i = 1; i <= totalPages; i++) {
     slicePagination.push(productHandledList.splice(0, 8));

@@ -11,11 +11,15 @@ const signOut = auth.querySelector(".sign-out");
 const goToAdminDashboard = auth.querySelector(".go-admin-dashboard");
 
 const currentUser = getLocalStorage("currentUser");
-if (currentUser?.isAdmin) {
+if (!!currentUser) {
   signOut.classList.remove("hidden");
-  goToAdminDashboard.classList.remove("hidden");
   signIn.classList.add("hidden");
   signUp.classList.add("hidden");
+  if (currentUser.isAdmin) {
+    goToAdminDashboard.classList.remove("hidden");
+  } else {
+    goToAdminDashboard.classList.add("hidden");
+  }
 } else {
   signOut.classList.add("hidden");
   goToAdminDashboard.classList.add("hidden");
@@ -25,5 +29,6 @@ if (currentUser?.isAdmin) {
 
 signOut.addEventListener("click", () => {
   setLocalStorage("currentUser", null);
+  setLocalStorage("cartList", []);
   window.location.assign(window.location.origin);
 });
