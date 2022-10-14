@@ -66,7 +66,7 @@ function handleSignUp() {
     });
 
     setLocalStorage("userList", userList);
-    setLocalStorage("cartList", []);
+    setLocalStorage("cartList", cartList);
     setLocalStorage("currentUser", userList[userList.length - 1]);
     window.location.assign(window.location.origin);
   } else {

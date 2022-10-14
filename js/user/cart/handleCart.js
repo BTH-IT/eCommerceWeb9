@@ -1,4 +1,9 @@
-import { queryAllElement, queryElement } from "../../constant.js";
+import {
+  getLocalStorage,
+  queryAllElement,
+  queryElement,
+  setLocalStorage,
+} from "../../constant.js";
 import { productList } from "../../data.js";
 import { cartList, renderCartList } from "./renderCart.js";
 
@@ -37,3 +42,24 @@ modalBtn?.addEventListener("click", () => {
   renderCartList();
   modalSizeEle.classList.add("hidden");
 });
+
+function updateCartList(newCartList) {
+  const currentUser = getLocalStorage("currentUser");
+  if (!currentUser) return;
+  currentUser.cartList = newCartList;
+
+  let userList = getLocalStorage("userList");
+  userList = userList.map((user) => {
+    if (user.id === currentUser.id) {
+      return {
+        ...user,
+        cartList: newCartList,
+      };
+    }
+    return user;
+  });
+  setLocalStorage("currentUser", currentUser);
+  setLocalStorage("userList", userList);
+}
+
+export { updateCartList };

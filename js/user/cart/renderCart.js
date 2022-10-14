@@ -3,25 +3,23 @@ import {
   queryAllElement,
   queryElement,
   setLocalStorage,
-  updateCartList,
 } from "../../constant.js";
+import { updateCartList } from "./handleCart.js";
 
 const viewCartEle = queryElement(".header__view-cart");
 const countCart = queryElement(".header__count-products");
-const currentUser = getLocalStorage("currentUser");
-if (currentUser) {
-  setLocalStorage("cartList", currentUser.cartList);
-}
-
 const cartList = getLocalStorage("cartList");
 
 function renderCartList() {
+  if (!viewCartEle || !countCart) {
+    return;
+  }
+
   if (cartList.length <= 0) {
     viewCartEle.innerHTML =
       "<h1 class='header__cart-empty'>Cart is empty!!!</h1>";
     countCart.classList.add("hidden");
-    setLocalStorage("cartList", cartList);
-    updateCartList(cartList);
+    setLocalStorage("cartList", []);
     return;
   }
 
@@ -68,20 +66,20 @@ function renderCartList() {
   }, 0);
 
   viewCartEle.innerHTML = `
-    <ul class="header__cart-list">
-      ${cartListHTML}
-    </ul>
-    <div class="header__total-cart">
-    <span>Cart Subtotal : </span>
-    <span>$${total.toFixed(2)}</span>
-    </div>
-    <a href="./cart-list.html" class="btn btn--cart">View more and buy</a>
-  `;
+      <ul class="header__cart-list">
+        ${cartListHTML}
+      </ul>
+      <div class="header__total-cart">
+      <span>Cart Subtotal : </span>
+      <span>$${total.toFixed(2)}</span>
+      </div>
+      <a href="./cart-list.html" class="btn btn--cart">View more and buy</a>
+    `;
 
-  countCart.classList.remove("hidden");
   const countProduct = cartList.reduce((pre, curr) => {
     return pre + curr.count;
   }, 0);
+  countCart.classList.remove("hidden");
   countCart.innerText = countProduct > 99 ? "99+" : countProduct;
 
   const minusBtn = queryAllElement(".minus");

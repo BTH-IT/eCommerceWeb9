@@ -3,17 +3,13 @@ import {
   queryAllElement,
   queryElement,
   setLocalStorage,
-  updateCartList,
 } from "../../constant.js";
+import { updateCartList } from "./handleCart.js";
 
 const table = queryElement(".cart-list");
 const totalPrice = queryElement(".cart-list__total-price");
 const clearBtn = queryElement(".clear");
 const buyBtn = queryElement(".buy");
-const currentUser = getLocalStorage("currentUser");
-if (currentUser) {
-  setLocalStorage("cartList", currentUser.cartList);
-}
 const cartList = getLocalStorage("cartList");
 
 function renderCartList() {
