@@ -1,95 +1,95 @@
 const productList = [
   {
     id: 1,
-    name: "Balo đa năng 1",
+    name: "Áo Halloween 1",
     prePrice: 10,
     salePercent: 13,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "balo",
     imagePrimary:
-      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Balo-nu-24b-10-ZiZoou-Store.jpg?v=1626941120",
+      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/63284b7683c5f.jpg?v=1663585151",
     imageSecondary:
-      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Balo-nu-24b-1-5-2-ZiZoou-Store.jpg?v=1657979061",
+      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849b5b7d99.jpg?v=1663585151",
   },
   {
     id: 2,
-    name: "Balo đa năng 2",
+    name: "Áo Halloween 2",
     prePrice: 10,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "balo",
     imagePrimary:
-      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Balo-nu-24-8-ZiZoou-Store_43da433b-008c-4ff9-87ce-4c4d28d3729b.jpg?v=1629940251",
+      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/6326a2baaccd2.jpg?v=1663497876",
     imageSecondary:
-      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Balo-nu-24-27-2-ZiZoou-Store.jpg?v=1657979154",
+      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/6326a3010f7d3.jpg?v=1663497876",
   },
   {
     id: 3,
-    name: "Balo đa năng 3",
+    name: "Áo Halloween 3",
     prePrice: 10,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "balo",
     imagePrimary:
-      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Balo-nu-25-7-ZiZoou-Store.jpg?v=1629940444",
+      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849b01fa37.jpg?v=1663584692",
     imageSecondary:
-      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Balo-nu-25-19-2-ZiZoou-Store.jpg?v=1629940446",
+      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849b10cd22.jpg?v=1663584692",
   },
   {
     id: 4,
-    name: "Balo đa năng 4",
+    name: "Áo Halloween 4",
     prePrice: 15,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "balo",
     imagePrimary:
-      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Balo-Nam-Nu_18-2-ZiZoou-Store.jpg?v=1629940573",
+      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849acd1954.jpg?v=1663584689",
     imageSecondary:
-      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Balo-Nam-Nu_18-21-ZiZoou-Store.jpg?v=1629940577",
+      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849ae11c05.jpg?v=1663584689",
   },
   {
     id: 5,
-    name: "Balo đa năng 5",
+    name: "Áo Halloween 5",
     prePrice: 15,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "balo",
     imagePrimary:
-      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Balo-nam-nu-dep-34-4-ZiZoou-Store_f748dadc-d0f8-4e06-9bbe-b246938b016d.jpg?v=1640950644",
+      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849a935c81.jpg?v=1663584685",
     imageSecondary:
-      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Balo-nam-nu-dep-34-21-ZiZoou-Store.jpg?v=1642788223",
+      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849aaaf050.jpg?v=1663584685",
   },
   {
     id: 6,
-    name: "Balo đa năng 6",
+    name: "Áo Halloween 6",
     prePrice: 12,
     salePercent: 17,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "balo",
     imagePrimary:
-      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Balo-nam-nu-23b-16-ZiZoou-Store.jpg?v=1634050446",
+      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849a5572a3.jpg?v=1663584681",
     imageSecondary:
-      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Balo-nam-nu-23b-28-ZiZoou-Store.jpg?v=1634050402",
+      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849a69037c.jpg?v=1663584681",
   },
   {
     id: 7,
-    name: "balo đa năng 7",
+    name: "Áo Halloween 7",
     prePrice: 8,
     salePercent: 13,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "balo",
     imagePrimary:
-      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Balo-nam-nu-cao-cap-48-Grey-Similar-31-ZiZoou-Store.jpg?v=1647076737",
+      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/6326fb28cee93.jpg?v=1663499246",
     imageSecondary:
-      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Balo-nam-nu-cao-cap-48-Similar-3-Grey-ZiZoou-Store.jpg?v=1647076737",
+      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/6326fbe2f37a1.jpg?v=1663499246",
   },
   {
     id: 8,
-    name: "Balo đa năng 8",
+    name: "ÁO THUN IN HÌNH ĐẸP 0",
     prePrice: 9,
     salePercent: 13,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "balo",
     imagePrimary:
-      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Balo-nam-nu-19b-14-ZiZoou-Store.jpg?v=1629939808",
+      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/e13118c4e120e7ad49def276e0f591cb.jpg?v=1651839486",
     imageSecondary:
-      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Balo-nam-nu-19b-27-ZiZoou-Store.jpg?v=1629939795",
+      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/ae6f62472e2855264b180cb3ec68734c.jpg?v=1651839486",
   },
   {
     id: 9,
