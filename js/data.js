@@ -5,7 +5,7 @@ const productList = [
     prePrice: 10,
     salePercent: 13,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-    type: "balo",
+    type: "T-shirt",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/63284b7683c5f.jpg?v=1663585151",
     imageSecondary:
@@ -16,7 +16,7 @@ const productList = [
     name: "Áo Halloween 2",
     prePrice: 10,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-    type: "balo",
+    type: "T-shirt",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/6326a2baaccd2.jpg?v=1663497876",
     imageSecondary:
@@ -27,7 +27,7 @@ const productList = [
     name: "Áo Halloween 3",
     prePrice: 10,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-    type: "balo",
+    type: "T-shirt",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849b01fa37.jpg?v=1663584692",
     imageSecondary:
@@ -38,7 +38,7 @@ const productList = [
     name: "Áo Halloween 4",
     prePrice: 15,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-    type: "balo",
+    type: "T-shirt",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849acd1954.jpg?v=1663584689",
     imageSecondary:
@@ -49,7 +49,7 @@ const productList = [
     name: "Áo Halloween 5",
     prePrice: 15,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-    type: "balo",
+    type: "T-shirt",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849a935c81.jpg?v=1663584685",
     imageSecondary:
@@ -61,7 +61,7 @@ const productList = [
     prePrice: 12,
     salePercent: 17,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-    type: "balo",
+    type: "T-shirt",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849a5572a3.jpg?v=1663584681",
     imageSecondary:
@@ -73,7 +73,7 @@ const productList = [
     prePrice: 8,
     salePercent: 13,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-    type: "balo",
+    type: "T-shirt",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/6326fb28cee93.jpg?v=1663499246",
     imageSecondary:
@@ -85,7 +85,7 @@ const productList = [
     prePrice: 9,
     salePercent: 13,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-    type: "balo",
+    type: "T-shirt",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/e13118c4e120e7ad49def276e0f591cb.jpg?v=1651839486",
     imageSecondary:
@@ -373,7 +373,7 @@ productList.forEach((product) => {
   }
 });
 
-const typeProductList = ["balo", "T-shirt", "pant"];
+const typeProductList = ["T-shirt", "pant"];
 
 const sortList = ["Default", "Price, low to high", "Price, high to low"];
 
