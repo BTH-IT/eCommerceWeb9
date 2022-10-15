@@ -1,95 +1,95 @@
 const productList = [
   {
     id: 1,
-    name: "Áo Halloween 1",
+    name: "Áo hoodie 1",
     prePrice: 10,
     salePercent: 13,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-    type: "T-shirt",
+    type: "Jacket & Hoodie",
     imagePrimary:
-      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/63284b7683c5f.jpg?v=1663585151",
+      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Ao-hoodie-2-Blue-1-ZiZoou-Store.jpg?v=1640878739",
     imageSecondary:
-      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849b5b7d99.jpg?v=1663585151",
+      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Ao-hoodie-2-3-5-Xanh-duong-ZiZoou-Store.jpg?v=1664183413",
   },
   {
     id: 2,
-    name: "Áo Halloween 2",
+    name: "Áo Hoodie 2",
     prePrice: 10,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-    type: "T-shirt",
+    type: "Jacket & Hoodie",
     imagePrimary:
-      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/6326a2baaccd2.jpg?v=1663497876",
+      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Ao-hoodie-1-Blue-1-ZiZoou-Store.jpg?v=1640771136",
     imageSecondary:
-      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/6326a3010f7d3.jpg?v=1663497876",
+      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Size-Ao-hoodie-xanh-tron-basic-ZiZoou-Store.jpg?v=1663147608",
   },
   {
     id: 3,
-    name: "Áo Halloween 3",
+    name: "Áo Khoác 1",
     prePrice: 10,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-    type: "T-shirt",
+    type: "Jacket & Hoodie",
     imagePrimary:
-      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849b01fa37.jpg?v=1663584692",
+      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Ao-khoac-jacket-form-rong-oversize-NCC4-Trang-Be-Vang-Khaki-1-ZiZoou-Store.jpg?v=1658291953",
     imageSecondary:
-      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849b10cd22.jpg?v=1663584692",
+      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Size-NCC2-Jacket-2-1-White-Beige-ZiZoou-Store_2.jpg?v=1658291953",
   },
   {
     id: 4,
-    name: "Áo Halloween 4",
+    name: "Áo Khoác 2",
     prePrice: 15,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-    type: "T-shirt",
+    type: "Jacket & Hoodie",
     imagePrimary:
-      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849acd1954.jpg?v=1663584689",
+      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Ao-khoac-jacket-form-rong-oversize-NCC2-Grey-1-3-2-ZiZoou-Store_c16bd3b6-0da5-4f7a-bb48-638fff426ab1.jpg?v=1651668575",
     imageSecondary:
-      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849ae11c05.jpg?v=1663584689",
+      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Size-NCC2-Jacket-2-Grey-ZiZoou-Store_2.jpg?v=1653381672",
   },
   {
     id: 5,
-    name: "Áo Halloween 5",
+    name: "Áo Khoác 3",
     prePrice: 15,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-    type: "T-shirt",
+    type: "Jacket & Hoodie",
     imagePrimary:
-      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849a935c81.jpg?v=1663584685",
+      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Ao-khoac-jacket-form-rong-oversize-NCC2-Black-1-3-1-ZiZoou-Store.jpg?v=1651668323",
     imageSecondary:
-      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849aaaf050.jpg?v=1663584685",
+      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Size-NCC2-Jacket-2-Black-ZiZoou-Store_2.jpg?v=1653381640",
   },
   {
     id: 6,
-    name: "Áo Halloween 6",
+    name: "Áo Hoodie 3",
     prePrice: 12,
     salePercent: 17,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-    type: "T-shirt",
+    type: "Jacket & Hoodie",
     imagePrimary:
-      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849a5572a3.jpg?v=1663584681",
+      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Ao-hoodie-1-Black-5-1-ZiZoou-Store.jpg?v=1640769876",
     imageSecondary:
-      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/632849a69037c.jpg?v=1663584681",
+      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Size-Ao-hoodie-den-tron-basic-ZiZoou-Store.jpg?v=1663147569",
   },
   {
     id: 7,
-    name: "Áo Halloween 7",
+    name: "Áo Hoodie 4",
     prePrice: 8,
     salePercent: 13,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-    type: "T-shirt",
+    type: "Jacket & Hoodie",
     imagePrimary:
-      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/6326fb28cee93.jpg?v=1663499246",
+      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Ao-hoodie-2-White-1-ZiZoou-Store.jpg?v=1640879077",
     imageSecondary:
-      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/6326fbe2f37a1.jpg?v=1663499246",
+      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Ao-hoodie-2-3-5-Trang-nga-ZiZoou-Store.jpg?v=1664183392",
   },
   {
     id: 8,
-    name: "ÁO THUN IN HÌNH ĐẸP 0",
+    name: "ÁO Khoác 4",
     prePrice: 9,
     salePercent: 13,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-    type: "T-shirt",
+    type: "Jacket & Hoodie",
     imagePrimary:
-      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/e13118c4e120e7ad49def276e0f591cb.jpg?v=1651839486",
+      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Ao-khoac-jacket-form-rong-oversize-NCC4-Xanh-4-ZiZoou-Store.jpg?v=1660797083",
     imageSecondary:
-      "https://cdn.shopify.com/s/files/1/0566/1795/9593/products/ae6f62472e2855264b180cb3ec68734c.jpg?v=1651839486",
+      "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Size-NCC2-Jacket-2-1-Blue-ZiZoou-Store_2.jpg?v=1660797125",
   },
   {
     id: 9,
@@ -373,7 +373,7 @@ productList.forEach((product) => {
   }
 });
 
-const typeProductList = ["T-shirt", "pant"];
+const typeProductList = ["Jacket & Hoodie", "T-shirt", "Pant"];
 
 const sortList = ["Default", "Price, low to high", "Price, high to low"];
 

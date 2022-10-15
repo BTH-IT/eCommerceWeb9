@@ -9,7 +9,9 @@ const stats = [];
 
 if (orderList) {
   typeProductList.forEach((type) => {
-    const typeList = orderList.filter((order) => order.type === type);
+    const typeList = orderList.filter(
+      (order) => order.type.toLowerCase() === type.toLowerCase()
+    );
     let count = 0;
     const total = typeList.reduce((pre, curr) => {
       const price = curr.salePercent ? curr.salePrice : curr.prePrice;

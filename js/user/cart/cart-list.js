@@ -156,6 +156,7 @@ clearBtn.addEventListener("click", () => {
 });
 
 buyBtn.addEventListener("click", () => {
+  const currentUser = getLocalStorage("currentUser");
   if (currentUser) {
     const orderList = getLocalStorage("orderList");
 

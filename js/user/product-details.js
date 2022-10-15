@@ -1,4 +1,4 @@
-import { queryElement } from "../constant.js";
+import { queryAllElement, queryElement } from "../constant.js";
 import { productList } from "../data.js";
 import { cartList, renderCartList } from "./cart/renderCart.js";
 
@@ -72,12 +72,6 @@ productDetailsEle.innerHTML = `
 
         <input type="radio" name="size" id="3xl" value="3xl" hidden>
         <label for="3xl" class="product-details__size-label">3xl</label>
-
-        <input type="radio" name="size" id="4xl" value="4xl" hidden>
-        <label for="4xl" class="product-details__size-label">4xl</label>
-
-        <input type="radio" name="size" id="5xl" value="5xl" hidden>
-        <label for="5xl" class="product-details__size-label">5xl</label>
       </div>
       <div class="product-details__add-cart">
         <div class="product-details__quantity">
@@ -145,10 +139,21 @@ const relatedProductListHTML = relatedProductList
 
 relatedProductListEle.innerHTML = relatedProductListHTML;
 
-const minus = queryElement(".minus");
-const plus = queryElement(".plus");
+const modal = queryElement(".modal");
+const minus = queryElement(".product-details__quantity .minus");
+const plus = queryElement(".product-details__quantity .plus");
 const inputQuantity = queryElement(".product-details__input-quantity");
 const detailBtn = queryElement(".btn--details");
+const relatedCartIconList = queryAllElement(".related-products__item-cart");
+
+console.log(minus);
+
+relatedCartIconList.forEach((relatedCartIcon) => {
+  relatedCartIcon.addEventListener("click", () => {
+    modal.classList.remove("hidden");
+    modal.dataset.id = relatedCartIcon.dataset.id;
+  });
+});
 
 minus.addEventListener("click", () => {
   if (inputQuantity.value == 1) return;
@@ -172,7 +177,7 @@ detailBtn.addEventListener("click", () => {
       count: Number(inputQuantity.value),
       size,
     });
-  } else cartList[cartIdx].count++;
+  } else cartList[cartIdx].count += Number(inputQuantity.value);
 
   renderCartList();
 });
