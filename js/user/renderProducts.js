@@ -5,8 +5,8 @@ import { filterType, filterPrice } from "./filter/handleFilter.js";
 import { handleSlicePagination } from "./pagination.js";
 
 const productList = getLocalStorage("productList");
-
 const productListEle = queryElement(".products__item-list");
+const paginationELe = queryElement(".pagination");
 let slicePaginationList;
 
 function handleFilterAndSort() {
@@ -126,6 +126,11 @@ function renderProductPage(countPage = 1) {
 function renderProducts() {
   const productHandledList = handleFilterAndSort();
 
+  if (productHandledList.length <= 0) {
+    productListEle.innerHTML = "";
+    paginationELe.classList.add("hidden");
+    return;
+  }
   slicePaginationList = handleSlicePagination(productHandledList);
 
   renderProductPage();
