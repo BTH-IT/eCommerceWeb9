@@ -94,6 +94,11 @@
             </div>
           </div>
           <div class="input">
+            <label for="desc" class="label">Description</label>
+            <textarea placeholder="Enter description..." id="desc" rules="require|max-400"></textarea>
+            <span class="error"></span>
+          </div>
+          <div class="input">
             <label for="price" class="label">Pre Price</label>
             <input type="number" min="1" placeholder="Enter pre price..." id="price" rules="require">
             <span class="error"></span>
@@ -106,10 +111,7 @@
           <div class="input">
             <label for="type" class="label">Type Of Product</label>
             <select id="type" rules="require">
-              <option hidden value="">-- Type of product --</option>
-              <option value="balo">Balo</option>
-              <option value="t-shirt">T-shirt</option>
-              <option value="pant">Pant</option>
+              <option hidden value=""></option>
             </select>
             <span class="error"></span>
           </div>

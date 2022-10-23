@@ -116,9 +116,9 @@ function renderCartList() {
   });
 
   deleteBtn.forEach((delBtn) => {
-    delBtn.addEventListener("click", (e) => {
-      const id = e.target.dataset.id;
-      const size = e.target.dataset.size;
+    delBtn.addEventListener("click", () => {
+      const id = delBtn.parentElement.dataset.id;
+      const size = delBtn.parentElement.dataset.size;
       const cartIdx = cartList.findIndex(
         (cart) => cart.id === Number(id) && cart.size === size
       );

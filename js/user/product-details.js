@@ -1,5 +1,4 @@
-import { queryAllElement, queryElement } from "../constant.js";
-import { productList } from "../data.js";
+import { getLocalStorage, queryAllElement, queryElement } from "../constant.js";
 import { cartList, renderCartList } from "./cart/renderCart.js";
 
 const relatedProductListEle = queryElement(".related-products__list");
@@ -7,8 +6,9 @@ const productDetailsEle = queryElement(".product-details");
 
 const url = new URL(document.location);
 const id = Number(url.searchParams.get("id"));
-const productDetails = productList.find((product) => product.id === id);
 
+const productList = getLocalStorage("productList");
+const productDetails = productList.find((product) => product.id === id);
 const relatedProductList = productList.filter(
   (product) => product.type === productDetails.type && product.id !== id
 );

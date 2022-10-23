@@ -4,11 +4,13 @@ import {
   queryElement,
   setLocalStorage,
 } from "../constant.js";
+import { typeProductList } from "../data.js";
 import { validation } from "../user/sign/validation.js";
 
 const name = queryElement("#name");
 const imagePrimary = queryElement("#image-primary");
 const imageSecondary = queryElement("#image-secondary");
+const desc = queryElement("#desc");
 const price = queryElement("#price");
 const salePercent = queryElement("#sale-percent");
 const select = queryElement("select");
@@ -16,6 +18,17 @@ const createBtn = queryElement(".create");
 const updateBtn = queryElement(".update");
 const labelPrimary = queryElement("label[for='image-primary']");
 const labelSecondary = queryElement("label[for='image-secondary']");
+const typeSelectList = ["-- Type of product --", ...typeProductList];
+
+select.innerHTML = typeSelectList
+  .map((typeProduct, index) => {
+    if (index === 0) {
+      return `<option hidden value="">${typeProduct}</option>`;
+    } else {
+      return `<option value="${typeProduct}">${typeProduct}</option>`;
+    }
+  })
+  .join("");
 
 function renderProductForm(id) {
   updateBtn.classList.remove("hidden");
@@ -26,8 +39,9 @@ function renderProductForm(id) {
 
   name.value = productList[productIdx].name;
   price.value = productList[productIdx].prePrice;
+  desc.value = productList[productIdx].desc;
+  select.value = productList[productIdx].type;
   salePercent.value = productList[productIdx].salePercent || "";
-  select.value = productList[productIdx].type.toLowerCase();
   labelPrimary.innerHTML = `
     <img src=${productList[productIdx].imagePrimary}>
   `;
@@ -37,7 +51,7 @@ function renderProductForm(id) {
 
   function handleUpdate() {
     const formValidation = [];
-    formValidation.push(name, price, select);
+    formValidation.push(name, price, desc, select);
     let isError = false;
     formValidation.forEach((validate) => {
       if (validation(validate)) isError = true;
@@ -48,6 +62,7 @@ function renderProductForm(id) {
     productList[productIdx].name = name.value;
     productList[productIdx].prePrice = price.value;
     productList[productIdx].type = select.value;
+    productList[productIdx].desc = desc.value;
 
     if (salePercent.value) {
       newProduct["salePercent"] = Number(salePercent.value);
@@ -85,6 +100,7 @@ function reset() {
   price.value = "";
   salePercent.value = "";
   select.value = "";
+  desc.value = "";
   labelPrimary.innerHTML = `
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
       stroke-width="2">
@@ -105,7 +121,7 @@ function reset() {
 
 function handleCreate() {
   const formValidation = [];
-  formValidation.push(name, price, imagePrimary, imageSecondary, select);
+  formValidation.push(name, price, desc, imagePrimary, imageSecondary, select);
   let isError = false;
   formValidation.forEach((validate) => {
     if (validation(validate)) isError = true;
@@ -121,6 +137,7 @@ function handleCreate() {
     name: name.value,
     prePrice: Number(price.value),
     type: select.value,
+    desc: desc.value,
   };
 
   if (salePercent.value) {
@@ -152,6 +169,9 @@ name.addEventListener("blur", () => validation(name));
 
 price.addEventListener("change", () => validation(price));
 price.addEventListener("blur", () => validation(price));
+
+desc.addEventListener("change", () => validation(desc));
+desc.addEventListener("blur", () => validation(desc));
 
 imagePrimary.addEventListener("click", () => validation(imagePrimary));
 imagePrimary.addEventListener("change", () => {

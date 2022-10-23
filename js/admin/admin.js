@@ -26,6 +26,8 @@ if (currentUser && currentUser?.isAdmin) {
   const updateBtn = queryElement(".update");
   const signOut = queryElement(".sign-out");
 
+  const desc = queryElement("#desc");
+
   usersControl.addEventListener("click", () => {
     if (usersControl.className.includes("active")) {
       return;
@@ -93,4 +95,10 @@ if (currentUser && currentUser?.isAdmin) {
     setLocalStorage("currentUser", null);
     window.location.assign(window.location.origin);
   });
+
+  console.dir(desc);
+  setInterval(() => {
+    desc.style.height = "48px";
+    desc.style.height = desc.scrollHeight + "px";
+  }, 100);
 } else window.location.assign(window.location.origin);
