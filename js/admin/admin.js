@@ -96,9 +96,8 @@ if (currentUser && currentUser?.isAdmin) {
     window.location.assign(window.location.origin);
   });
 
-  console.dir(desc);
   setInterval(() => {
     desc.style.height = "48px";
     desc.style.height = desc.scrollHeight + "px";
-  }, 100);
+  }, 500);
 } else window.location.assign(window.location.origin);
