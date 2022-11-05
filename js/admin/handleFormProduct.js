@@ -159,6 +159,9 @@ function handleCreate() {
 
   if (salePercent.value) {
     newProduct["salePercent"] = Number(salePercent.value);
+    newProduct["salePrice"] =
+      Number(price.value) -
+      (Number(price.value) * Number(salePercent.value)) / 100;
   }
 
   productList.push(newProduct);
