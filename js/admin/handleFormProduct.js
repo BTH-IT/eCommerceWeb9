@@ -6,6 +6,7 @@ import {
 } from "../constant.js";
 import { typeProductList } from "../data.js";
 import { validation } from "../user/sign/validation.js";
+import { renderProductsManage } from "./productManage.js";
 
 const name = queryElement("#name");
 const imagePrimary = queryElement("#image-primary");
@@ -19,7 +20,6 @@ const updateBtn = queryElement(".update");
 const labelPrimary = queryElement("label[for='image-primary']");
 const labelSecondary = queryElement("label[for='image-secondary']");
 const typeSelectList = ["-- Type of product --", ...typeProductList];
-const backProductManageBtn = queryElement(".products-form .products__btn");
 
 select.innerHTML = typeSelectList
   .map((typeProduct, index) => {
@@ -95,15 +95,18 @@ function renderProductForm(id) {
       readerSecondary.readAsDataURL(imageSecondary.files[0]);
     }
 
-    backProductManageBtn.addEventListener("click", () => {
-      productsForm.classList.add("hidden");
-      productsManage.classList.remove("hidden");
-      const errorList = queryAllElement(".error");
-      errorList.forEach((error) => {
-        error.innerText = "";
-      });
-      renderProductsManage();
+    const productsForm = queryElement(".products-form");
+    const productsManage = queryElement(".products");
+    const errorList = queryAllElement(".error");
+
+    productsForm.classList.add("hidden");
+    productsManage.classList.remove("hidden");
+
+    errorList.forEach((error) => {
+      error.innerText = "";
     });
+
+    renderProductsManage();
   }
 
   updateBtn.addEventListener("click", handleUpdate);
