@@ -67,7 +67,8 @@ function renderProductForm(id) {
     if (salePercent.value) {
       productList[productIdx]["salePercent"] = Number(salePercent.value);
       productList[productIdx].salePrice =
-        Number(price.value) - Number(price.value) * Number(salePercent.value);
+        Number(price.value) -
+        (Number(price.value) * Number(salePercent.value)) / 100;
     }
 
     setLocalStorage("productList", productList);
