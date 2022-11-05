@@ -241,7 +241,7 @@ const productList = [
     salePercent: 20,
 
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
-    type: "pant",
+    type: "Pant",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Quan-Baggy-Jean-nam-nu-LightGrey-1-7-ZiZoou-Store.jpg?v=1664185659",
     imageSecondary:
@@ -253,7 +253,7 @@ const productList = [
     prePrice: 18,
     salePercent: 20,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
-    type: "pant",
+    type: "Pant",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Quan-Baggy-Jean-nam-nu-2-Grey-1-ZiZoou-Store.jpg?v=1657713439",
     imageSecondary:
@@ -265,7 +265,7 @@ const productList = [
     prePrice: 16,
     salePercent: 20,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
-    type: "pant",
+    type: "Pant",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Quan-Baggy-Kaki-nam-nu-1-Black-6-ZiZoou-Store.jpg?v=1647708674",
     imageSecondary:
@@ -277,7 +277,7 @@ const productList = [
     prePrice: 20,
     salePercent: 19,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
-    type: "pant",
+    type: "Pant",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Quan-jogger-4-armygreen-5-ZiZoou-Store.jpg?v=1646667133",
     imageSecondary:
@@ -289,7 +289,7 @@ const productList = [
     prePrice: 20,
     salePercent: 15,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
-    type: "pant",
+    type: "Pant",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Quan-jogger-4-khaki-5-ZiZoou-Store.jpg?v=1646666717",
     imageSecondary:
@@ -301,7 +301,7 @@ const productList = [
     prePrice: 20,
     salePercent: 15,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
-    type: "pant",
+    type: "Pant",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Quan-jogger-4-black-3-ZiZoou-Store.jpg?v=1646665216",
     imageSecondary:
@@ -313,7 +313,7 @@ const productList = [
     prePrice: 25,
     salePercent: 15,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
-    type: "pant",
+    type: "Pant",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Quan-jogger-1b-Grey-3-ZiZoou-Store.jpg?v=1646581637",
     imageSecondary:
@@ -324,7 +324,7 @@ const productList = [
     name: "QUẦN Jogger 4",
     prePrice: 20,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
-    type: "pant",
+    type: "Pant",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Quan-jogger-1b-Black-1-2-ZiZoou-Store.jpg?v=1646580538",
     imageSecondary:
@@ -335,7 +335,7 @@ const productList = [
     name: "QUẦN Jogger 5",
     prePrice: 21,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
-    type: "pant",
+    type: "Pant",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Quan-jogger-5-black-35-ZiZoou-Store.jpg?v=1646560068",
     imageSecondary:
@@ -346,7 +346,7 @@ const productList = [
     name: "QUẦN Jogger 6",
     prePrice: 13,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
-    type: "pant",
+    type: "Pant",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Quan-jogger-2-LightGrey-3-ZiZoou-Store.jpg?v=1646578646",
     imageSecondary:
@@ -358,7 +358,7 @@ const productList = [
     prePrice: 14,
     salePercent: 20,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
-    type: "pant",
+    type: "Pant",
     imagePrimary:
       "https://cdn.shopify.com/s/files/1/0354/5169/9333/products/Quan-jogger-2-DarkGrey-8-ZiZoou-Store.jpg?v=1646577925",
     imageSecondary:
