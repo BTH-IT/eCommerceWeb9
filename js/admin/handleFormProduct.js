@@ -20,6 +20,9 @@ const updateBtn = queryElement(".update");
 const labelPrimary = queryElement("label[for='image-primary']");
 const labelSecondary = queryElement("label[for='image-secondary']");
 const typeSelectList = ["-- Type of product --", ...typeProductList];
+const productsForm = queryElement(".products-form");
+const productsManage = queryElement(".products");
+const errorList = queryAllElement(".error");
 
 select.innerHTML = typeSelectList
   .map((typeProduct, index) => {
@@ -94,10 +97,6 @@ function renderProductForm(id) {
       });
       readerSecondary.readAsDataURL(imageSecondary.files[0]);
     }
-
-    const productsForm = queryElement(".products-form");
-    const productsManage = queryElement(".products");
-    const errorList = queryAllElement(".error");
 
     productsForm.classList.add("hidden");
     productsManage.classList.remove("hidden");
@@ -181,7 +180,17 @@ function handleCreate() {
 
   readerPrimary.readAsDataURL(imagePrimary.files[0]);
   readerSecondary.readAsDataURL(imageSecondary.files[0]);
+
   reset();
+
+  productsForm.classList.add("hidden");
+  productsManage.classList.remove("hidden");
+
+  errorList.forEach((error) => {
+    error.innerText = "";
+  });
+
+  renderProductsManage();
 }
 
 name.addEventListener("change", () => validation(name));
