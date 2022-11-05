@@ -60,7 +60,7 @@ function renderProductForm(id) {
     if (isError) return;
 
     productList[productIdx].name = name.value;
-    productList[productIdx].prePrice = price.value;
+    productList[productIdx].prePrice = Number(price.value);
     productList[productIdx].type = select.value;
     productList[productIdx].desc = desc.value;
 
