@@ -13,7 +13,7 @@ const productsManage = products.querySelector(".products-manage");
 const productsForm = queryElement(".products-form");
 
 function renderProductsManage() {
-  window.scrollY = 0;
+  window.scroll(0, 0);
   const productList = getLocalStorage("productList");
   const productsHTML = productList
     .map((product) => {
