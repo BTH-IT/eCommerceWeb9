@@ -65,7 +65,7 @@ function renderProductForm(id) {
     productList[productIdx].desc = desc.value;
 
     if (salePercent.value) {
-      newProduct["salePercent"] = Number(salePercent.value);
+      productList["salePercent"] = Number(salePercent.value);
     }
 
     setLocalStorage("productList", productList);
