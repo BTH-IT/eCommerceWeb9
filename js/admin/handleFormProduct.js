@@ -19,6 +19,7 @@ const updateBtn = queryElement(".update");
 const labelPrimary = queryElement("label[for='image-primary']");
 const labelSecondary = queryElement("label[for='image-secondary']");
 const typeSelectList = ["-- Type of product --", ...typeProductList];
+const backProductManageBtn = queryElement(".products-form .products__btn");
 
 select.innerHTML = typeSelectList
   .map((typeProduct, index) => {
@@ -93,6 +94,16 @@ function renderProductForm(id) {
       });
       readerSecondary.readAsDataURL(imageSecondary.files[0]);
     }
+
+    backProductManageBtn.addEventListener("click", () => {
+      productsForm.classList.add("hidden");
+      productsManage.classList.remove("hidden");
+      const errorList = queryAllElement(".error");
+      errorList.forEach((error) => {
+        error.innerText = "";
+      });
+      renderProductsManage();
+    });
   }
 
   updateBtn.addEventListener("click", handleUpdate);
