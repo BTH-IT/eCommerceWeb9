@@ -61,7 +61,7 @@
   max-height: 200px;
   overflow-y: auto;
   border: 1px solid var(--gray-300);
-  z-index: 99;
+  z-index: 2;
 }
 
 .products__sort-dropdown li {

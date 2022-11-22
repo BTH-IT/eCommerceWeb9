@@ -93,11 +93,11 @@ if (currentUser && currentUser?.isAdmin) {
 
   signOut.addEventListener("click", () => {
     setLocalStorage("currentUser", null);
-    window.location.assign(window.location.origin);
+    window.location.href = "/";
   });
 
   setInterval(() => {
     desc.style.height = "48px";
     desc.style.height = desc.scrollHeight + "px";
   }, 500);
-} else window.location.assign(window.location.origin);
+} else window.location.href = "/";

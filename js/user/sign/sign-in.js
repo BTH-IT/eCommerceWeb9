@@ -56,9 +56,9 @@ function handleSignIn() {
     setLocalStorage("cartList", [...cartList, ...userList[userIdx].cartList]);
 
     if (userList[userIdx].isAdmin) {
-      window.location.assign(window.location.origin + "/admin-dashboard.html");
+      window.location.href = "/admin-dashboard.html";
     } else {
-      window.location.assign(window.location.origin);
+      window.location.href = "/";
     }
   } else window.alert("username or password is invalid!!!");
 }

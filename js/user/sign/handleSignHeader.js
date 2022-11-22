@@ -30,5 +30,5 @@ if (!!currentUser) {
 signOut.addEventListener("click", () => {
   setLocalStorage("currentUser", null);
   setLocalStorage("cartList", []);
-  window.location.assign(window.location.origin);
+  window.location.href = "/";
 });

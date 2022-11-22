@@ -68,7 +68,7 @@ function handleSignUp() {
     setLocalStorage("userList", userList);
     setLocalStorage("cartList", cartList);
     setLocalStorage("currentUser", userList[userList.length - 1]);
-    window.location.assign(window.location.origin);
+    window.location.href = "/";
   } else {
     window.alert("account is already exists.");
   }
