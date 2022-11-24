@@ -9,6 +9,12 @@
   height: 100%;
 }
 
+.modal__size-select {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
 .modal__select-size {
   position: absolute;
   z-index: 101;
@@ -49,6 +55,7 @@
   transition: all 0.3s linear;
   font-size: 1.2rem;
   margin: 0 10px;
+  text-align: center;
 }
 
 .modal__size-label:hover {
