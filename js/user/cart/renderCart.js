@@ -82,8 +82,8 @@ function renderCartList() {
   countCart.classList.remove("hidden");
   countCart.innerText = countProduct > 99 ? "99+" : countProduct;
 
-  const minusBtn = queryAllElement(".minus");
-  const plusBtn = queryAllElement(".plus");
+  const minusBtn = queryAllElement(".header__cart .minus");
+  const plusBtn = queryAllElement(".header__cart .plus");
   const deleteBtn = queryAllElement(".header__cart-btn-delete");
 
   minusBtn.forEach((minus) => {

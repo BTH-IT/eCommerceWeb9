@@ -52,26 +52,25 @@ productDetailsEle.innerHTML = `
       </p>
       <div class="product-details__select-size">
         <h1 class="product-details__size-heading">Size</h1>
-        <input type="radio" name="size" id="xs" value="xs" hidden checked>
-        <label for="xs" class="product-details__size-label">xs</label>
+        <div class="product-details__size-select">
+          <input type="radio" name="size" id="xs" value="xs" hidden checked>
+          <label for="xs" class="product-details__size-label">xs</label>
 
-        <input type="radio" name="size" id="s" value="s" hidden>
-        <label for="s" class="product-details__size-label">s</label>
+          <input type="radio" name="size" id="s" value="s" hidden>
+          <label for="s" class="product-details__size-label">s</label>
 
-        <input type="radio" name="size" id="m" value="m" hidden>
-        <label for="m" class="product-details__size-label">m</label>
+          <input type="radio" name="size" id="m" value="m" hidden>
+          <label for="m" class="product-details__size-label">m</label>
 
-        <input type="radio" name="size" id="l" value="l" hidden>
-        <label for="l" class="product-details__size-label">l</label>
+          <input type="radio" name="size" id="l" value="l" hidden>
+          <label for="l" class="product-details__size-label">l</label>
 
-        <input type="radio" name="size" id="xl" value="xl" hidden>
-        <label for="xl" class="product-details__size-label">xl</label>
+          <input type="radio" name="size" id="xl" value="xl" hidden>
+          <label for="xl" class="product-details__size-label">xl</label>
 
-        <input type="radio" name="size" id="2xl" value="2xl" hidden>
-        <label for="2xl" class="product-details__size-label">2xl</label>
-
-        <input type="radio" name="size" id="3xl" value="3xl" hidden>
-        <label for="3xl" class="product-details__size-label">3xl</label>
+          <input type="radio" name="size" id="2xl" value="2xl" hidden>
+          <label for="2xl" class="product-details__size-label">2xl</label>
+        </div>
       </div>
       <div class="product-details__add-cart">
         <div class="product-details__quantity">
@@ -85,7 +84,24 @@ productDetailsEle.innerHTML = `
   </div>
 `;
 
-const relatedProductListHTML = relatedProductList
+function handleRelatedList(array) {
+  const ranRelatedList = [];
+  let i = 3;
+  let j = 0;
+
+  while (i >= 0) {
+    j = Math.floor(Math.random() * array.length);
+    ranRelatedList.push(array[j]);
+    array.splice(j, 1);
+    i--;
+  }
+
+  return ranRelatedList;
+}
+
+const randomRelatedList = handleRelatedList(relatedProductList);
+
+const relatedProductListHTML = randomRelatedList
   .map((relatedProduct) => {
     return `
     <div class="related-products__item">
@@ -145,8 +161,6 @@ const plus = queryElement(".product-details__quantity .plus");
 const inputQuantity = queryElement(".product-details__input-quantity");
 const detailBtn = queryElement(".btn--details");
 const relatedCartIconList = queryAllElement(".related-products__item-cart");
-
-console.log(minus);
 
 relatedCartIconList.forEach((relatedCartIcon) => {
   relatedCartIcon.addEventListener("click", () => {

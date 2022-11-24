@@ -51,6 +51,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+		-webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
@@ -73,3 +74,4 @@ input[type=number] {
 .hidden {
 	display: none !important;
 }
+
