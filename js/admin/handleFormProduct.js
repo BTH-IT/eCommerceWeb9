@@ -85,6 +85,7 @@ function renderProductForm(id) {
       readerPrimary.addEventListener("load", () => {
         productList[productIdx]["imagePrimary"] = readerPrimary.result;
         setLocalStorage("productList", productList);
+        renderProductsManage();
       });
       readerPrimary.readAsDataURL(imagePrimary.files[0]);
     }
@@ -94,6 +95,7 @@ function renderProductForm(id) {
       readerSecondary.addEventListener("load", () => {
         productList[productIdx]["imageSecondary"] = readerSecondary.result;
         setLocalStorage("productList", productList);
+        renderProductsManage();
       });
       readerSecondary.readAsDataURL(imageSecondary.files[0]);
     }
@@ -104,8 +106,6 @@ function renderProductForm(id) {
     errorList.forEach((error) => {
       error.innerText = "";
     });
-
-    renderProductsManage();
   }
 
   updateBtn.addEventListener("click", handleUpdate);
