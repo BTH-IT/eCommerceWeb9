@@ -7,6 +7,7 @@ if (!getLocalStorage("productList"))
 if (!getLocalStorage("cartList")) setLocalStorage("cartList", []);
 
 if (!getLocalStorage("orderList")) setLocalStorage("orderList", []);
+if (!getLocalStorage("statsList")) setLocalStorage("statsList", []);
 
 if (!getLocalStorage("userList")) {
   setLocalStorage("userList", [

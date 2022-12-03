@@ -21,14 +21,20 @@
     <section class="side-bar">
       <h1 class="side-bar__heading"><span>9G</span>Dashboard</h1>
       <ul class="side-bar__list">
-        <li class="side-bar__item active users-control">
+        <li class="side-bar__item active users-control pc">
           Users
         </li>
-        <li class="side-bar__item products-control">
+        <li class="side-bar__item products-control pc">
           Products
         </li>
-        <li class="side-bar__item stats-control">
+        <li class="side-bar__item orders-control pc">
+          Orders
+        </li>
+        <li class="side-bar__item stats-control pc">
           Stats
+        </li>
+        <li class="side-bar__item mobile">
+          <i class="fa-solid fa-bars"></i>
         </li>
         <li class="side-bar__item go-home">
           <a href="/">
@@ -40,6 +46,30 @@
         </li>
       </ul>
     </section>
+    <section class="side-bar-mobile">
+      <ul class="side-bar-mobile__list">
+        <li class="side-bar-mobile__item active users-control">
+          <i class="fa-solid fa-users"></i>
+          Users
+        </li>
+        <li class="side-bar-mobile__item products-control">
+          <i class="fa-solid fa-boxes-stacked"></i>
+          Products
+        </li>
+        <li class="side-bar-mobile__item orders-control">
+          <i class="fa-solid fa-clipboard-check"></i>
+          Orders
+        </li>
+        <li class="side-bar-mobile__item stats-control">
+          <i class="fa-solid fa-chart-line"></i>
+          Stats
+        </li>
+      </ul>
+      <span class="side-bar-close">
+        <i class="fa-solid fa-xmark"></i>
+      </span>
+    </section>
+    <div class="side-bar-overlay"></div>
     <section class="users">
       <h1 class="users__heading">Users Manage</h1>
       <div class="users-manage">
@@ -129,6 +159,13 @@
         Total All: <span>0$</span>
       </div>
     </section>
+    <section class="orders hidden">
+      <div class="orders__heading-container">
+        <h1 class="orders__heading">orders manage</h1>
+      </div>
+      <div class="orders-manage">
+      </div>
+    </section>
   </section>
   <section class="modal hidden">
     <div class="modal__select-size">
@@ -144,6 +181,7 @@
   <script type="module" src="./js/admin/admin.js"></script>
   <script type="module" src="./js/admin/userManage.js"></script>
   <script type="module" src="./js/admin/productManage.js"></script>
+  <script type="module" src="./js/admin/orderManage.js"></script>
   <script type="module" src="./js/admin/statsManage.js"></script>
   <script type="module" src="./js/user/modal.js"></script>
   <script type="module" src="./js/admin/handleFormProduct.js"></script>

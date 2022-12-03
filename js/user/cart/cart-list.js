@@ -160,17 +160,19 @@ buyBtn.addEventListener("click", () => {
   if (currentUser) {
     const orderList = getLocalStorage("orderList");
 
-    cartList.forEach((cart) => {
-      const orderIdx = orderList.findIndex(
-        (order) => order.id === cart.id && order.size === cart.size
-      );
+    const createdAt = Date.now();
 
-      if (orderIdx !== -1) {
-        orderList[orderIdx].count += cart.count;
-      } else {
-        orderList.push(cart);
+    const cartUserList = cartList.map((cart) => {
+      return {
+        ...cart,
+        createdAt: new Date(createdAt).toLocaleDateString(),
+        owner: currentUser.username,
+        ownerId: currentUser.id,
+        statusDelivery: "not-delivery",
       }
     });
+
+    orderList.push(...cartUserList);
 
     cartList.splice(0, cartList.length);
     setLocalStorage("cartList", cartList);
