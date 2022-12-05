@@ -210,6 +210,7 @@
 .orders-manage__image {
   width: 100px;
   height: 150px;
+  flex-shrink: 0;
 }
 
 .products-manage__img,
@@ -240,12 +241,46 @@
 .orders-manage__date,
 .orders-manage__username,
 .orders-manage__id,
-.orders-manage__size {
+.orders-manage__size,
+.orders-manage__amount {
   margin-bottom: 10px;
 }
 
-.orders-manage__size {
+.orders-manage__size span {
   text-transform: uppercase;
+}
+
+.order-manage__method {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.orders-manage__btn {
+  border-radius: 6px;
+  border: 1px solid var(--red-500);
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: var(--red-500);
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s linear;
+}
+
+.orders-manage__btn.delete {
+  background-color: transparent;
+  color: var(--red-500);
+}
+
+.orders-manage__btn.delete:hover {
+  background-color: var(--red-500);
+  color: white;
+}
+
+.orders-manage__btn:hover {
+  background-color: transparent;
+  color: var(--red-500);
 }
 
 /* ------- */
@@ -411,6 +446,12 @@ select {
   .orders-manage__price {
     font-size: 1rem;
   }
+
+  .orders-manage__item {
+    gap: 5px;
+    margin-bottom: 40px;
+    flex-direction: column;
+  }
 }
 
 /* Mobile */
@@ -456,14 +497,12 @@ select {
     gap: 10px;
   }
 
-  .products-manage__item,
-  .orders-manage__item {
+  .products-manage__item {
     flex-direction: column;
   }
 
-  .orders-manage__item {
-    gap: 5px;
-    margin-bottom: 40px;
+  .order-manage__method {
+    flex-direction: column;
   }
 
   .products-manage__info {

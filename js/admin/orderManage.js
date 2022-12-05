@@ -1,9 +1,9 @@
 import {
   getLocalStorage,
-  queryAllElement,
   queryElement,
   setLocalStorage,
 } from "../constant.js";
+import { renderStatsManage } from "./statsManage.js";
 
 const orders = queryElement(".orders");
 const ordersManage = orders.querySelector(".orders-manage");
@@ -26,16 +26,23 @@ function renderOrdersManage() {
               <div class="orders-manage__price">
                 $${order.salePercent ? order.salePrice : order.prePrice}
               </div>
-              <div class="orders-manage__size">Size: ${order.size}</div>
+              <div class="orders-manage__size">Size: <span>${order.size}</span></div>
+              <div class="orders-manage__amount">Amount: ${order.count}</div>
               <div class="orders-manage__date">Purchase Date: ${order.createdAt}</div>
               <div class="orders-manage__username">Customer: ${order.owner}</div>
               <div class="orders-manage__id">Customer Id: ${order.ownerId}</div>
             </div>
           </div>
-          <select class="orders-manage__select" data-idx=${idx}>
-            <option value="not-delivery" ${order.statusDelivery === 'not-delivery' ? "selected" : ""}>Not delivery</option>
-            <option value="delivered" ${order.statusDelivery === 'delivered' ? "selected" : ""}>Delivered</option>
-          </select>
+          <div class="order-manage__method">
+            <select class="orders-manage__select" data-idx=${idx}>
+              <option value="not-delivery" ${order.statusDelivery === 'not-delivery' ? "selected" : ""}>Not delivery</option>
+              <option value="delivering" ${order.statusDelivery === 'delivering' ? "selected" : ""}>Delivering</option>
+            </select>
+            <div class="orders-manage__btn-container">
+              <button class="orders-manage__btn done" type="button" data-idx=${idx}>Done</button>
+              <button class="orders-manage__btn delete" type="button" data-idx=${idx}>Delete</button>
+            </div>
+          </div>
         </div>
       `;
     })
@@ -44,6 +51,8 @@ function renderOrdersManage() {
   ordersManage.innerHTML = ordersHTML;
 
   const selectOrderList = ordersManage.querySelectorAll(".orders-manage__select");
+  const btnDeleteOrderList = ordersManage.querySelectorAll(".orders-manage__btn.delete");
+  const btnDoneOrderList = ordersManage.querySelectorAll(".orders-manage__btn.done");
 
   selectOrderList.forEach((select) => {
     select.addEventListener("change", () => {
@@ -51,6 +60,35 @@ function renderOrdersManage() {
       orderList[orderIdx].statusDelivery = select.value;
 
       setLocalStorage("orderList", orderList);
+    })
+  });
+
+  btnDoneOrderList.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const orderIdx = Number(btn.dataset.idx);
+      if (orderList[orderIdx].statusDelivery !== 'delivering') {
+        window.alert("Status isn't delivering!!!");
+        return;
+      }
+
+      const statsList = getLocalStorage("statsList");
+      statsList.push(orderList[orderIdx]);
+      orderList.splice(orderIdx, 1);
+
+      setLocalStorage("orderList", orderList);
+      setLocalStorage("statsList", statsList);
+      renderStatsManage();
+      renderOrdersManage();
+    })
+  });
+
+  btnDeleteOrderList.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const orderIdx = Number(btn.dataset.idx);
+      orderList.splice(orderIdx, 1);
+
+      setLocalStorage("orderList", orderList);
+      renderOrdersManage();
     })
   });
 }

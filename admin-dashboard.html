@@ -135,7 +135,8 @@
           </div>
           <div class="input">
             <label for="sale-percent" class="label">Sale Percent</label>
-            <input type="number" min="1" max="100" placeholder="Enter sale percent..." id="sale-percent">
+            <input type="number" min="0" max="100" rules="maxValue-100|minValue-0" placeholder="Enter sale percent..."
+              id="sale-percent">
             <span class="error"></span>
           </div>
           <div class="input">
@@ -181,8 +182,8 @@
   <script type="module" src="./js/admin/admin.js"></script>
   <script type="module" src="./js/admin/userManage.js"></script>
   <script type="module" src="./js/admin/productManage.js"></script>
-  <script type="module" src="./js/admin/orderManage.js"></script>
   <script type="module" src="./js/admin/statsManage.js"></script>
+  <script type="module" src="./js/admin/orderManage.js"></script>
   <script type="module" src="./js/user/modal.js"></script>
   <script type="module" src="./js/admin/handleFormProduct.js"></script>
 </body>

@@ -55,7 +55,7 @@ function renderProductForm(id) {
 
   function handleUpdate() {
     const formValidation = [];
-    formValidation.push(name, price, desc, select);
+    formValidation.push(name, price, desc, select, salePercent);
     let isError = false;
     formValidation.forEach((validate) => {
       if (validation(validate)) isError = true;
@@ -73,6 +73,8 @@ function renderProductForm(id) {
       productList[productIdx].salePrice =
         Number(price.value) -
         (Number(price.value) * Number(salePercent.value)) / 100;
+
+      productList["salePrice"] = productList["salePrice"].toFixed(2);
     }
 
     setLocalStorage("productList", productList);
@@ -137,7 +139,7 @@ function reset() {
 
 function handleCreate() {
   const formValidation = [];
-  formValidation.push(name, price, desc, imagePrimary, imageSecondary, select);
+  formValidation.push(name, price, desc, imagePrimary, imageSecondary, select, salePercent);
   let isError = false;
   formValidation.forEach((validate) => {
     if (validation(validate)) isError = true;
@@ -161,6 +163,8 @@ function handleCreate() {
     newProduct["salePrice"] =
       Number(price.value) -
       (Number(price.value) * Number(salePercent.value)) / 100;
+
+    newProduct["salePrice"] = newProduct["salePrice"].toFixed(2);
   }
 
   productList.push(newProduct);
@@ -201,6 +205,9 @@ price.addEventListener("blur", () => validation(price));
 
 desc.addEventListener("change", () => validation(desc));
 desc.addEventListener("blur", () => validation(desc));
+
+salePercent.addEventListener("change", () => validation(salePercent));
+salePercent.addEventListener("blur", () => validation(salePercent));
 
 imagePrimary.addEventListener("click", () => validation(imagePrimary));
 imagePrimary.addEventListener("change", () => {

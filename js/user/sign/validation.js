@@ -13,6 +13,8 @@ function validation(input) {
 
   let message;
 
+
+
   ruleList.forEach((item) => {
     if (message) return;
     switch (item[0]) {
@@ -22,8 +24,25 @@ function validation(input) {
         else message = undefined;
         break;
       case "max":
-        if (input.value.length > Number(item[1]))
+        if (input.value.length > Number(item[1])) {
           message = "This field must be max " + item[1];
+        }
+        else message = undefined;
+        break;
+      case "min":
+        if (input.value.length < Number(item[1]))
+          message = "This field must be min " + item[1];
+        else message = undefined;
+        break;
+      case "maxValue":
+        if (input.value > Number(item[1])) {
+          message = "This field must be max " + item[1];
+        }
+        else message = undefined;
+        break;
+      case "minValue":
+        if (input.value < Number(item[1]))
+          message = "This field must be min " + item[1];
         else message = undefined;
         break;
       case "confirm":
@@ -35,6 +54,8 @@ function validation(input) {
         break;
     }
   });
+
+  console.log(ruleList);
 
   if (message) {
     error.innerText = message;
