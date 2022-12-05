@@ -55,8 +55,6 @@ function validation(input) {
     }
   });
 
-  console.log(ruleList);
-
   if (message) {
     error.innerText = message;
     return true;
