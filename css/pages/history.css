@@ -4,7 +4,7 @@
 @import "../layouts/header.css";
 @import "../layouts/footer.css";
 
-.cart-list {
+.history {
   margin-top: 150px;
   width: 100%;
   max-width: 1200px;
@@ -12,13 +12,13 @@
   padding: 0 20px;
 }
 
-.cart-empty {
+.history-empty {
   text-align: center;
   font-size: 1.4rem;
   color: var(--red-500);
 }
 
-.cart-list__title {
+.history__title {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 3rem;
@@ -26,25 +26,25 @@
   text-align: center;
 }
 
-.cart-list__table {
+.history__table {
   table-layout: fixed;
   width: 100%;
 }
 
-.cart-list__heading {
+.history__heading {
   text-transform: uppercase;
   font-weight: 600;
   border: 1px solid var(--gray-300);
 }
 
-.cart-list__heading th {
+.history__heading th {
   padding: 14px 20px;
   border: 1px solid var(--gray-300);
   text-align: center;
   vertical-align: middle;
 }
 
-.cart-list__row td{
+.history__row td{
   padding: 10px;
   text-align: center;
   vertical-align: middle;
@@ -52,67 +52,34 @@
   font-size: 1.2rem;
 }
 
-.cart-list__image {
+.history__image {
   width: 100%;
   height: 100%;
 }
 
-.cart-list__img {
+.history__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: brightness(0.96);
 }
 
-.cart-list__quantity {
-  border: 1px solid black;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.6rem;
-}
-
-.cart-list__input-quantity {
-  outline: none;
-  border: none;
-  width: 50px;
-  text-align: center;
-  font-size: inherit;
-}
-
-.cart-list__btn-quantity {
-  padding: 10px;
-  cursor: pointer;
-}
-
-.cart-list__product-size,
-.cart-list__product-name {
+.history__product-size,
+.history__product-name {
   text-transform: uppercase;
 }
 
-.cart-list__delete-icon span {
-  font-size: 2rem;
-  padding: 30px;
-  cursor: pointer;
-  color: var(--gray-400);
-  transition: all 0.2s linear;
-}
-
-.cart-list__delete-icon span:hover {
-  color: var(--red-500);
-}
-
-.cart-list__payment {
+.history__payment {
   width: 100%;
   max-width: 1200px;
   margin: 50px auto;
   padding: 0 20px;
 }
 
-.cart-list__btn-payment {
+.history__btn-payment {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
 }
 
 .btn.btn--payment {
@@ -133,25 +100,6 @@
   background-color: var(--red-500);
 }
 
-.cart-list__buy {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 100px;
-}
-
-.cart-list__total {
-  font-size: 2rem;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-.cart-list__total-price {
-  font-size: 2rem;
-  font-weight: 400;
-  color: var(--red-500);
-}
-
 .modal__select-size {
   width: 90%;
   max-height: 90%;
@@ -164,40 +112,27 @@
   text-align: center;
 }
 
-
 .modal__confirm {
   display: flex;
   gap: 10px;
 }
 
+
+
 /* Tablet */
 @media only screen and (max-width: 992px) {
-  .cart-list__title {
+  .history__title {
     font-size: 2.5rem;
-    margin-top: 100px;
   }
 
-  .cart-list__heading th {
+  .history__heading th {
     font-size: 0.8rem;
   }
 
-  .cart-list__row td {
+  .history__row td {
     font-size: 1rem;
   }
-  .cart-list__delete-icon span {
-    font-size: 1.6rem;
-    padding: 20px;
-  }
 
-  .cart-list__quantity {
-    font-size: 1.2rem;
-    gap: 0;
-  }
-
-  .cart-list__minus-quantity, .cart-list__minus-quantity {
-    padding: 5px;
-    cursor: pointer;
-}
 }
 
 @media only screen and (max-width: 786px) {
@@ -205,53 +140,30 @@
     font-size: 1rem;
   }
 
-  .cart-list__input-quantity {
-    width: 25px;
-    font-size: 0.8rem;
-  }
-
-  .cart-list__total,
-  .cart-list__total-price {
-    font-size: 1.6rem;
-  }
-
 }
 
 /* Mobile */
 @media only screen and (max-width: 576px) {
-  .cart-list__title {
+  .history__title {
     font-size: 2rem;
+    margin-top: 75px;
   }
-  .cart-list__heading {
+  .history__heading {
     display: none;
   }
-  .cart-list__row {
+  .history__row {
     display: block;
     border: 1px solid var(--gray-300);
   }
 
-  .cart-list__row td {
+  .history__row td {
     display: block;
     border: none;
-  }
-
-  .cart-list__quantity {
-    border: none;
-  }
-
-  .cart-list__input-quantity {
-    width: 50px;
-    font-size: 1.2rem;
   }
 
   .btn.btn--payment {
     font-size: 1rem;
     padding: 8px 10px;
-  }
-
-  .cart-list__total,
-  .cart-list__total-price {
-    font-size: 1.4rem;
   }
 
   .modal__size-heading {
@@ -265,13 +177,8 @@
     font-size: 0.6rem;
   }
 
-  .cart-list__total,
-  .cart-list__total-price {
-    font-size: 1rem;
-  }
-
-  .cart-list__title {
+  .history__title {
     font-size: 1.4rem;
-    margin-top: 60px;
+    margin-top: 50px;
   }
 }

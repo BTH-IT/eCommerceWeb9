@@ -14,8 +14,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="./css/layouts/toast.css">
   <link rel="stylesheet" href="./css/layouts/modal.css">
-  <link rel="stylesheet" href="./css/layouts/form.css">
-  <link rel="stylesheet" href="./css/pages/cart-list.css">
+  <link rel="stylesheet" href="./css/pages/history.css">
   <title>Your Cart List</title>
 </head>
 
@@ -30,6 +29,19 @@
       </div>
     </a>
     <div class="header__nav">
+      <div class="header__cart">
+        <a href="/cart-list.html" class="header__cart-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+          </svg>
+          <div class="header__count-products"></div>
+        </a>
+        <div class="header__view-cart">
+
+        </div>
+      </div>
       <div class="header__auth">
         <a href="./history.html" class="header__history-icon">
           <i class="fa-solid fa-clock-rotate-left"></i>
@@ -45,21 +57,12 @@
       </div>
     </div>
   </header>
-  <h1 class="cart-list__title">Your shopping cart</h1>
-  <section class="cart-list">
+  <h1 class="history__title">Your history</h1>
+  <section class="history">
   </section>
-  <div class="cart-list__payment">
-    <div class="cart-list__btn-payment">
-      <a href="/index.html" class="btn btn--payment">Continue Shopping</a>
-      <div class="btn btn--payment clear">Clear cart</div>
-    </div>
-    <div class="cart-list__buy">
-      <div>
-        <span class="cart-list__total">Total: </span>
-        <span class="cart-list__total-price">0</span>
-      </div>
-      <button class="btn btn--payment buy">procced to Checkout</button>
-    </div>
+  <div class="history__btn-payment">
+    <a href="/index.html" class="btn btn--payment">Continue Shopping</a>
+    <div class="btn btn--payment clear">Clear history</div>
   </div>
   <footer class="footer">
     <p class="footer__copyright">Copyright © 2022 HasThemes | Built with Beshop by HasThemes.</p>
@@ -69,17 +72,20 @@
       <span class="modal__close-icon">
         <i class="fa-solid fa-xmark"></i>
       </span>
-      <div class="modal__content">
-
+      <h1 class="modal__size-heading">Are you sure???</h1>
+      <div class="modal__confirm">
+        <button class="btn btn--filter btn__modal" data-value="yes">Yes</button>
+        <button class="btn btn--filter btn__modal" data-value="no">No</button>
       </div>
     </div>
     <div class="overlay"></div>
   </section>
   <div id="toast"></div>
   <script type="module" src="./js/toast.js"></script>
-  <script type="module" src="./js/user/modal.js"></script>
-  <script type="module" src="./js/user/cart/cart-list.js"></script>
+  <script type="module" src="./js/user/history.js"></script>
+  <script type="module" src="./js/user/cart/renderCart.js"></script>
   <script type="module" src="./js/user/sign/handleSignHeader.js"></script>
+  <script type="module" src="./js/user/modal.js"></script>
 </body>
 
 </html>

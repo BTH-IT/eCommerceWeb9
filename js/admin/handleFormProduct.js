@@ -5,6 +5,7 @@ import {
   setLocalStorage,
 } from "../constant.js";
 import { typeProductList } from "../data.js";
+import { toast } from "../toast.js";
 import { validation } from "../user/sign/validation.js";
 import { renderProductsManage } from "./productManage.js";
 
@@ -70,11 +71,10 @@ function renderProductForm(id) {
 
     if (salePercent.value) {
       productList[productIdx]["salePercent"] = Number(salePercent.value);
-      productList[productIdx].salePrice =
+      productList[productIdx].salePrice = (
         Number(price.value) -
-        (Number(price.value) * Number(salePercent.value)) / 100;
-
-      productList["salePrice"] = productList["salePrice"].toFixed(2);
+        (Number(price.value) * Number(salePercent.value)) / 100
+      ).toFixed(2);
     }
 
     setLocalStorage("productList", productList);
@@ -108,6 +108,13 @@ function renderProductForm(id) {
     errorList.forEach((error) => {
       error.innerText = "";
     });
+
+    toast({
+      title: "Successfully!!!",
+      message: "Update done",
+      type: "success",
+      duration: 1000,
+    });
   }
 
   updateBtn.addEventListener("click", handleUpdate);
@@ -139,7 +146,15 @@ function reset() {
 
 function handleCreate() {
   const formValidation = [];
-  formValidation.push(name, price, desc, imagePrimary, imageSecondary, select, salePercent);
+  formValidation.push(
+    name,
+    price,
+    desc,
+    imagePrimary,
+    imageSecondary,
+    select,
+    salePercent
+  );
   let isError = false;
   formValidation.forEach((validate) => {
     if (validation(validate)) isError = true;
@@ -160,11 +175,10 @@ function handleCreate() {
 
   if (salePercent.value) {
     newProduct["salePercent"] = Number(salePercent.value);
-    newProduct["salePrice"] =
+    newProduct["salePrice"] = (
       Number(price.value) -
-      (Number(price.value) * Number(salePercent.value)) / 100;
-
-    newProduct["salePrice"] = newProduct["salePrice"].toFixed(2);
+      (Number(price.value) * Number(salePercent.value)) / 100
+    ).toFixed(2);
   }
 
   productList.push(newProduct);
@@ -175,6 +189,7 @@ function handleCreate() {
   readerPrimary.addEventListener("load", () => {
     productList[productIdx]["imagePrimary"] = readerPrimary.result;
     setLocalStorage("productList", productList);
+    renderProductsManage();
   });
 
   readerSecondary.addEventListener("load", () => {
@@ -194,7 +209,12 @@ function handleCreate() {
     error.innerText = "";
   });
 
-  renderProductsManage();
+  toast({
+    title: "Successfully!!!",
+    message: "Create done",
+    type: "success",
+    duration: 1000,
+  });
 }
 
 name.addEventListener("change", () => validation(name));

@@ -20,6 +20,7 @@ addCartIconEleList.forEach((addCartIconEle) => {
 
 modalBtn?.addEventListener("click", () => {
   const chooseSize = modalSizeEle.querySelector("input:checked");
+  if (!chooseSize) return;
   let chooseProduct = productList.find(
     (product) => product.id === Number(modalSizeEle.dataset.id)
   );

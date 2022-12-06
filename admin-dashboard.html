@@ -12,6 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;600;700&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="./css/layouts/toast.css">
   <link rel="stylesheet" href="./css/pages/admin-dashboard.css">
   <title>Admin Dashboard</title>
 </head>
@@ -166,17 +167,18 @@
       </div>
       <div class="orders__filter-container">
         <div class="orders__filter-date">
-          <label for="dateFrom">From: </label>
-          <input type="date" name="from" id="dateFrom">
-          <label for="dateTo">To: </label>
-          <input type="date" name="to" id="dateTo">
+          <div>
+            <label for="dateFrom">From: </label>
+            <input type="date" name="from" id="dateFrom">
+          </div>
+          <div>
+            <label for="dateTo">To: </label>
+            <input type="date" name="to" id="dateTo">
+          </div>
         </div>
         <div class="orders__filter-type">
           <span>Type: </span>
           <select>
-            <option value="all" selected>All</option>
-            <option value=""></option>
-            <option value=""></option>
           </select>
         </div>
         <div class="orders__filter-user">
@@ -199,6 +201,8 @@
     </div>
     <div class="overlay"></div>
   </section>
+  <div id="toast"></div>
+  <script type="module" src="./js/toast.js"></script>
   <script type="module" src="./js/admin/admin.js"></script>
   <script type="module" src="./js/admin/userManage.js"></script>
   <script type="module" src="./js/admin/productManage.js"></script>

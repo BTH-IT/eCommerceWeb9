@@ -5,8 +5,8 @@ import {
   setLocalStorage,
 } from "../constant.js";
 
-const modalListBtn = queryAllElement(".btn__modal");
 const usersManage = queryElement(".users-manage");
+const modalListBtn = queryAllElement(".btn__modal");
 const modal = queryElement(".modal");
 
 function renderUserList() {

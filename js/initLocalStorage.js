@@ -14,9 +14,10 @@ if (!getLocalStorage("userList")) {
     {
       id: 1,
       username: "bth3103",
-      password: "03012003",
+      password: "3103",
       isAdmin: true,
       cartList: [],
+      history: [],
     },
   ]);
 }

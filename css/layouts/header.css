@@ -273,7 +273,8 @@
 }
 
 .sign-out,
-.go-admin-dashboard {
+.go-admin-dashboard,
+.header__history-icon {
   text-decoration: none;
   font-size: 2rem;
   color: black;
@@ -281,7 +282,8 @@
 }
 
 .sign-out:hover,
-.go-admin-dashboard:hover {
+.go-admin-dashboard:hover,
+.header__history-icon:hover {
   color: var(--red-400);
 }
 
@@ -386,7 +388,8 @@
   }
 
   .sign-out,
-  .go-admin-dashboard {
+  .go-admin-dashboard,
+  .header__history-icon {
     font-size: 2rem;    
   }
 }
@@ -458,7 +461,8 @@
   }
 
   .sign-out,
-  .go-admin-dashboard {
+  .go-admin-dashboard,
+  .header__history-icon {
     font-size: 1.6rem;    
   }
 }
@@ -497,7 +501,8 @@
   }
 
   .sign-out,
-  .go-admin-dashboard {
+  .go-admin-dashboard,
+  .header__history-icon {
     font-size: 1.2rem;    
   }
 }

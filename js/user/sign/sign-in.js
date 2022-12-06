@@ -3,6 +3,7 @@ import {
   queryElement,
   setLocalStorage,
 } from "../../constant.js";
+import { toast } from "../../toast.js";
 import { validation } from "./validation.js";
 
 const inputWithIcon = queryElement(".input-with-icon");
@@ -39,7 +40,6 @@ function handleSignIn() {
   });
 
   if (isError) {
-    window.alert("error!!!");
     return;
   }
   const userList = getLocalStorage("userList");
@@ -55,12 +55,28 @@ function handleSignIn() {
     setLocalStorage("currentUser", userList[userIdx]);
     setLocalStorage("cartList", [...cartList, ...userList[userIdx].cartList]);
 
-    if (userList[userIdx].isAdmin) {
-      window.location.href = "/admin-dashboard.html";
-    } else {
-      window.location.href = "/";
-    }
-  } else window.alert("username or password is invalid!!!");
+    toast({
+      title: "Successfully!",
+      message: "Wellcome back!!!!",
+      type: "success",
+      duration: 1000,
+    });
+
+    setTimeout(() => {
+      if (userList[userIdx].isAdmin) {
+        window.location.href = "/admin-dashboard.html";
+      } else {
+        window.location.href = "/";
+      }
+    }, 1200);
+  } else {
+    toast({
+      title: "Error!",
+      message: "username or password is invalid!!!",
+      type: "error",
+      duration: 1000,
+    });
+  }
 }
 
 signInBtn.addEventListener("click", (e) => {

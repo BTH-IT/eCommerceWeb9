@@ -213,8 +213,8 @@
 }
 
 .orders-manage__image {
-  width: 200px;
-  height: 250px;
+  width: 300px;
+  height: 350px;
   flex-shrink: 0;
 }
 
@@ -248,7 +248,11 @@
 .orders-manage__id,
 .orders-manage__size,
 .orders-manage__amount,
-.orders-manage__type {
+.orders-manage__type,
+.orders-manage__phone,
+.orders-manage__username,
+.orders-manage__address,
+.orders-manage__note {
   margin-bottom: 10px;
 }
 
@@ -260,6 +264,7 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  flex-direction: column;
 }
 
 .orders-manage__btn {
@@ -296,14 +301,35 @@
   justify-content: space-between;
 }
 
+.orders__filter-date {
+  display: flex;
+  gap: 10px;
+}
+
+label[for="dateFrom"],
+label[for="dateTo"],
+.orders__filter-type span,
+.orders__filter-user span {
+  display: inline-block;
+  min-width: 65px;
+}
+
+.orders__filter-date div,
+.orders__filter-user,
+.orders__filter-type {
+  display: flex;
+  align-items: center;
+}
+
 .orders__filter-date input{
   padding: 5px;
+  width: 100%;
 }
 
 .orders__filter-type select {
   font-size: 1rem;
   padding: 5px;
-  width: 150px;
+  width: 100%;
 }
 
 .orders__filter-user input {
@@ -417,6 +443,38 @@ select {
   .stats-all-total {
     font-size: 1.4rem;
   }
+
+  .orders__filter-date {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .orders__filter-type,
+  .orders__filter-user {
+    width: 100%;
+  }
+
+  .orders__filter-type select,
+  .orders__filter-user input {
+    flex: 1;
+    width: 100%;
+  }
+
+  .orders__filter-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .orders__filter-date div{
+    display: flex;
+    align-items: center;
+  }
+
+  .orders__filter-date div input {
+    flex: 1;
+  }
 }
 
 @media only screen and (max-width: 786px) {
@@ -526,11 +584,12 @@ select {
     gap: 10px;
   }
 
-  .products-manage__item {
-    flex-direction: column;
+  .orders-manage__image {
+    width: 200px;
+    height: 250px;
   }
 
-  .order-manage__method {
+  .products-manage__item {
     flex-direction: column;
   }
 
@@ -544,6 +603,7 @@ select {
     flex-direction: column;
     gap: 10px;
     width: 100%;
+    flex: 1;
   }
 
   .products-manage__title {
@@ -586,14 +646,14 @@ select {
   }
 
   .stats__info {
-    font-size: 0.4rem;
+    font-size: 0.8rem;
   }
 
   .stats__total {
-    font-size: 0.4rem;
+    font-size: 0.8rem;
   }
 
   .stats-all-total {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
 }

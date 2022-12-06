@@ -1,9 +1,11 @@
 import {
   getLocalStorage,
+  queryAllElement,
   queryElement,
   setLocalStorage,
 } from "../constant.js";
 import { typeProductList } from "../data.js";
+import { toast } from "../toast.js";
 import { renderStatsManage } from "./statsManage.js";
 
 const orders = queryElement(".orders");
@@ -12,12 +14,15 @@ const dateFrom = orders.querySelector("#dateFrom");
 const dateTo = orders.querySelector("#dateTo");
 const selectType = orders.querySelector(".orders__filter-type select");
 const searchId = orders.querySelector(".orders__filter-user input");
+const modalListBtn = queryAllElement(".btn__modal");
+const modal = queryElement(".modal");
 
-const typeList = ['All', ...typeProductList];
+const typeList = ["All", ...typeProductList];
 
-selectType.innerHTML = typeList.map((type, idx) =>
-  `<option value="${type}" ${idx === 0 ? 'selected' : ''}>${type}</option>`
-)
+selectType.innerHTML = typeList.map(
+  (type, idx) =>
+    `<option value="${type}" ${idx === 0 ? "selected" : ""}>${type}</option>`
+);
 
 function renderOrdersManage(orderList = getLocalStorage("orderList")) {
   window.scroll(0, 0);
@@ -36,18 +41,43 @@ function renderOrdersManage(orderList = getLocalStorage("orderList")) {
               <div class="orders-manage__price">
                 $${order.salePercent ? order.salePrice : order.prePrice}
               </div>
-              <div class="orders-manage__type"><b>Type:</b> <span>${order.type}</span></div>
-              <div class="orders-manage__size"><b>Size:</b> <span>${order.size}</span></div>
-              <div class="orders-manage__amount"><b>Amount:</b> ${order.count}</div>
-              <div class="orders-manage__date"><b>Purchase Date:</b> ${order.createdAt}</div>
-              <div class="orders-manage__username"><b>Customer:</b> ${order.owner}</div>
-              <div class="orders-manage__id"><b>Customer Id:</b> ${order.ownerId}</div>
+              <div class="orders-manage__type"><b>Type:</b> <span>${
+                order.type
+              }</span></div>
+              <div class="orders-manage__size"><b>Size:</b> <span>${
+                order.size
+              }</span></div>
+              <div class="orders-manage__amount"><b>Amount:</b> ${
+                order.count
+              }</div>
+              <div class="orders-manage__date"><b>Purchase Date:</b> ${
+                order.createdAt
+              }</div>
+              <div class="orders-manage__id"><b>Customer Id:</b> ${
+                order.userId
+              }</div>
+              <div class="orders-manage__username"><b>Fullname:</b> ${
+                order.receiver
+              }</div>
+              <div class="orders-manage__phone"><b>Phone number:</b> ${
+                order.phone
+              }</div>
+              <div class="orders-manage__address"><b>Address:</b> ${
+                order.address
+              }</div>
+              <div class="orders-manage__note"><b>Note:</b> ${
+                !order.note ? "nothing" : order.note
+              }</div>
             </div>
           </div>
           <div class="order-manage__method">
             <select class="orders-manage__select" data-idx=${idx}>
-              <option value="not-delivery" ${order.statusDelivery === 'not-delivery' ? "selected" : ""}>Not delivery</option>
-              <option value="delivering" ${order.statusDelivery === 'delivering' ? "selected" : ""}>Delivering</option>
+              <option value="non-delivery" ${
+                order.statusDelivery === "non-delivery" ? "selected" : ""
+              }>Non-delivery</option>
+              <option value="delivering" ${
+                order.statusDelivery === "delivering" ? "selected" : ""
+              }>Delivering</option>
             </select>
             <div class="orders-manage__btn-container">
               <button class="orders-manage__btn done" type="button" data-idx=${idx}>Done</button>
@@ -61,9 +91,15 @@ function renderOrdersManage(orderList = getLocalStorage("orderList")) {
 
   ordersManage.innerHTML = ordersHTML;
 
-  const selectOrderList = ordersManage.querySelectorAll(".orders-manage__select");
-  const btnDeleteOrderList = ordersManage.querySelectorAll(".orders-manage__btn.delete");
-  const btnDoneOrderList = ordersManage.querySelectorAll(".orders-manage__btn.done");
+  const selectOrderList = ordersManage.querySelectorAll(
+    ".orders-manage__select"
+  );
+  const btnDeleteOrderList = ordersManage.querySelectorAll(
+    ".orders-manage__btn.delete"
+  );
+  const btnDoneOrderList = ordersManage.querySelectorAll(
+    ".orders-manage__btn.done"
+  );
 
   selectOrderList.forEach((select) => {
     select.addEventListener("change", () => {
@@ -71,14 +107,19 @@ function renderOrdersManage(orderList = getLocalStorage("orderList")) {
       orderList[orderIdx].statusDelivery = select.value;
 
       setLocalStorage("orderList", orderList);
-    })
+    });
   });
 
   btnDoneOrderList.forEach((btn) => {
     btn.addEventListener("click", () => {
       const orderIdx = Number(btn.dataset.idx);
-      if (orderList[orderIdx].statusDelivery !== 'delivering') {
-        window.alert("Status isn't delivering!!!");
+      if (orderList[orderIdx].statusDelivery !== "delivering") {
+        toast({
+          title: "Oops!!!",
+          message: "The status of the order is currently non-delivery",
+          type: "error",
+          duration: 3000,
+        });
         return;
       }
 
@@ -90,17 +131,22 @@ function renderOrdersManage(orderList = getLocalStorage("orderList")) {
       setLocalStorage("statsList", statsList);
       renderStatsManage();
       renderOrdersManage();
-    })
+
+      toast({
+        title: "Successfully!!!",
+        message: "Done",
+        type: "success",
+        duration: 1000,
+      });
+    });
   });
 
   btnDeleteOrderList.forEach((btn) => {
     btn.addEventListener("click", () => {
       const orderIdx = Number(btn.dataset.idx);
-      orderList.splice(orderIdx, 1);
-
-      setLocalStorage("orderList", orderList);
-      renderOrdersManage();
-    })
+      modal.dataset.idx = orderIdx;
+      modal.classList.remove("hidden");
+    });
   });
 }
 
@@ -118,26 +164,44 @@ function filterDate(date, from, to) {
 
 function filterOrdersManage() {
   const orderList = getLocalStorage("orderList");
-  let filterOrder = orderList.filter((order) => filterDate(order.createdAt, dateFrom.value, dateTo.value));
-  if (selectType.value !== 'All') {
-    filterOrder = filterOrder.filter((order) => order.type === selectType.value);
+  let filterOrder = orderList.filter((order) =>
+    filterDate(order.createdAt, dateFrom.value, dateTo.value)
+  );
+  if (selectType.value !== "All") {
+    filterOrder = filterOrder.filter(
+      (order) => order.type === selectType.value
+    );
   }
 
-  if (searchId.value && Number(searchId.value) !== 'NaN') {
+  if (searchId.value && Number(searchId.value) !== "NaN") {
     const id = Number(searchId.value);
-    filterOrder = filterOrder.filter((order) => order.ownerId === id);
+    filterOrder = filterOrder.filter((order) => order.userId === id);
   }
 
   renderOrdersManage(filterOrder);
 }
 
-dateFrom.addEventListener("change", filterOrdersManage)
+modalListBtn.forEach((modalBtn) => {
+  modalBtn.addEventListener("click", () => {
+    if (modalBtn.innerText.toLowerCase() === "yes") {
+      const orderIdx = Number(modal.dataset.idx);
+      const orderList = getLocalStorage("orderList");
+      orderList.splice(orderIdx, 1);
 
-dateTo.addEventListener("change", filterOrdersManage)
+      setLocalStorage("orderList", orderList);
+      renderOrdersManage();
+    }
+    modal.classList.add("hidden");
+  });
+});
 
-selectType.addEventListener("change", filterOrdersManage)
+dateFrom.addEventListener("change", filterOrdersManage);
 
-searchId.addEventListener("keyup", filterOrdersManage)
+dateTo.addEventListener("change", filterOrdersManage);
+
+selectType.addEventListener("change", filterOrdersManage);
+
+searchId.addEventListener("keyup", filterOrdersManage);
 
 renderOrdersManage();
 

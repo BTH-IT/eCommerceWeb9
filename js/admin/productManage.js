@@ -4,6 +4,7 @@ import {
   queryElement,
   setLocalStorage,
 } from "../constant.js";
+import { toast } from "../toast.js";
 import { renderProductForm } from "./handleFormProduct.js";
 
 const modal = queryElement(".modal");
@@ -74,6 +75,13 @@ modalListBtn.forEach((modalBtn) => {
       const newProductList = productList.filter((product) => product.id !== id);
       setLocalStorage("productList", newProductList);
       renderProductsManage();
+
+      toast({
+        title: "Successfully!!!",
+        message: "Delete done",
+        type: "success",
+        duration: 1000,
+      });
     }
     modal.classList.add("hidden");
   });

@@ -4,6 +4,7 @@ import {
   queryElement,
   setLocalStorage,
 } from "../../constant.js";
+import { toast } from "../../toast.js";
 import { validation } from "./validation.js";
 
 const inputWithIconList = queryAllElement(".input-with-icon");
@@ -43,7 +44,6 @@ function handleSignUp() {
   });
 
   if (isError) {
-    window.alert("username or password is invalid!!!");
     return;
   }
 
@@ -55,9 +55,12 @@ function handleSignUp() {
     username: form.querySelector("#username").value,
     password: form.querySelector("#password").value,
     isAdmin: false,
+    history: [],
   };
 
-  const userIdx = userList.findIndex((user) => user.id === userSignUp.id);
+  const userIdx = userList.findIndex(
+    (user) => user.username === userSignUp.username
+  );
 
   if (userIdx === -1) {
     userList.push({
@@ -65,12 +68,26 @@ function handleSignUp() {
       cartList,
     });
 
+    toast({
+      title: "Successfully!!!",
+      message: "Wellcome to 9G Shop",
+      type: "success",
+      duration: 1000,
+    });
+
     setLocalStorage("userList", userList);
     setLocalStorage("cartList", cartList);
     setLocalStorage("currentUser", userList[userList.length - 1]);
-    window.location.href = "/";
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 1500);
   } else {
-    window.alert("account is already exists.");
+    toast({
+      title: "Warning!!!",
+      message: "This account has been registered",
+      type: "warning",
+      duration: 3000,
+    });
   }
 }
 

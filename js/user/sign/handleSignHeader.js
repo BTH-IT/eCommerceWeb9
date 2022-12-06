@@ -8,11 +8,13 @@ const auth = queryElement(".header__auth");
 const signIn = auth.querySelector(".sign-in");
 const signUp = auth.querySelector(".sign-up");
 const signOut = auth.querySelector(".sign-out");
+const history = auth.querySelector(".header__history-icon");
 const goToAdminDashboard = auth.querySelector(".go-admin-dashboard");
 
 const currentUser = getLocalStorage("currentUser");
 if (!!currentUser) {
   signOut.classList.remove("hidden");
+  history.classList.remove("hidden");
   signIn.classList.add("hidden");
   signUp.classList.add("hidden");
   if (currentUser.isAdmin) {
@@ -21,6 +23,7 @@ if (!!currentUser) {
     goToAdminDashboard.classList.add("hidden");
   }
 } else {
+  history.classList.add("hidden");
   signOut.classList.add("hidden");
   goToAdminDashboard.classList.add("hidden");
   signIn.classList.remove("hidden");

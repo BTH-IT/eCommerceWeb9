@@ -50,6 +50,13 @@ function validation(input) {
           message = "This field must be exact with passsword field";
         else message = undefined;
         break;
+      case 'phone':
+        const regexPhoneNumber = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g;
+
+        if (!phone.value.match(regexPhoneNumber))
+          message = "This field must be a phone number";
+        else message = undefined;
+        break;
       default:
         break;
     }
