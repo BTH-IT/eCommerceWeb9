@@ -206,10 +206,15 @@
   gap: 30px;
 }
 
-.products-manage__image,
-.orders-manage__image {
+.products-manage__image {
   width: 100px;
   height: 150px;
+  flex-shrink: 0;
+}
+
+.orders-manage__image {
+  width: 200px;
+  height: 250px;
   flex-shrink: 0;
 }
 
@@ -242,7 +247,8 @@
 .orders-manage__username,
 .orders-manage__id,
 .orders-manage__size,
-.orders-manage__amount {
+.orders-manage__amount,
+.orders-manage__type {
   margin-bottom: 10px;
 }
 
@@ -281,6 +287,29 @@
 .orders-manage__btn:hover {
   background-color: transparent;
   color: var(--red-500);
+}
+
+.orders__filter-container {
+  display: flex;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.orders__filter-date input{
+  padding: 5px;
+}
+
+.orders__filter-type select {
+  font-size: 1rem;
+  padding: 5px;
+  width: 150px;
+}
+
+.orders__filter-user input {
+  padding: 5px;
+  outline: none;
+  
 }
 
 /* ------- */

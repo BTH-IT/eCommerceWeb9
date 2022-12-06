@@ -3,14 +3,24 @@ import {
   queryElement,
   setLocalStorage,
 } from "../constant.js";
+import { typeProductList } from "../data.js";
 import { renderStatsManage } from "./statsManage.js";
 
 const orders = queryElement(".orders");
 const ordersManage = orders.querySelector(".orders-manage");
+const dateFrom = orders.querySelector("#dateFrom");
+const dateTo = orders.querySelector("#dateTo");
+const selectType = orders.querySelector(".orders__filter-type select");
+const searchId = orders.querySelector(".orders__filter-user input");
 
-function renderOrdersManage() {
+const typeList = ['All', ...typeProductList];
+
+selectType.innerHTML = typeList.map((type, idx) =>
+  `<option value="${type}" ${idx === 0 ? 'selected' : ''}>${type}</option>`
+)
+
+function renderOrdersManage(orderList = getLocalStorage("orderList")) {
   window.scroll(0, 0);
-  const orderList = getLocalStorage("orderList");
   const ordersHTML = orderList
     .map((order, idx) => {
       return `
@@ -26,11 +36,12 @@ function renderOrdersManage() {
               <div class="orders-manage__price">
                 $${order.salePercent ? order.salePrice : order.prePrice}
               </div>
-              <div class="orders-manage__size">Size: <span>${order.size}</span></div>
-              <div class="orders-manage__amount">Amount: ${order.count}</div>
-              <div class="orders-manage__date">Purchase Date: ${order.createdAt}</div>
-              <div class="orders-manage__username">Customer: ${order.owner}</div>
-              <div class="orders-manage__id">Customer Id: ${order.ownerId}</div>
+              <div class="orders-manage__type"><b>Type:</b> <span>${order.type}</span></div>
+              <div class="orders-manage__size"><b>Size:</b> <span>${order.size}</span></div>
+              <div class="orders-manage__amount"><b>Amount:</b> ${order.count}</div>
+              <div class="orders-manage__date"><b>Purchase Date:</b> ${order.createdAt}</div>
+              <div class="orders-manage__username"><b>Customer:</b> ${order.owner}</div>
+              <div class="orders-manage__id"><b>Customer Id:</b> ${order.ownerId}</div>
             </div>
           </div>
           <div class="order-manage__method">
@@ -92,6 +103,41 @@ function renderOrdersManage() {
     })
   });
 }
+
+function formatDate(date) {
+  const dateArr = date.split("-");
+  return Number(dateArr[1]) + "/" + Number(dateArr[2]) + "/" + dateArr[0];
+}
+
+function filterDate(date, from, to) {
+  if (!from && !to) return true;
+  if (from && !to) return date >= formatDate(from);
+  if (!from && to) return date <= formatDate(to);
+  return date >= formatDate(from) && date <= formatDate(to);
+}
+
+function filterOrdersManage() {
+  const orderList = getLocalStorage("orderList");
+  let filterOrder = orderList.filter((order) => filterDate(order.createdAt, dateFrom.value, dateTo.value));
+  if (selectType.value !== 'All') {
+    filterOrder = filterOrder.filter((order) => order.type === selectType.value);
+  }
+
+  if (searchId.value && Number(searchId.value) !== 'NaN') {
+    const id = Number(searchId.value);
+    filterOrder = filterOrder.filter((order) => order.ownerId === id);
+  }
+
+  renderOrdersManage(filterOrder);
+}
+
+dateFrom.addEventListener("change", filterOrdersManage)
+
+dateTo.addEventListener("change", filterOrdersManage)
+
+selectType.addEventListener("change", filterOrdersManage)
+
+searchId.addEventListener("keyup", filterOrdersManage)
 
 renderOrdersManage();
 
