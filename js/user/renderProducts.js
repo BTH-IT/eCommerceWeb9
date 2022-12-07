@@ -127,10 +127,12 @@ function renderProducts() {
   const productHandledList = handleFilterAndSort();
 
   if (productHandledList.length <= 0) {
-    productListEle.innerHTML = "";
+    productListEle.innerHTML = "<div class='empty'>There're no products</div>";
+    productListEle.style.display = "block";
     paginationELe.classList.add("hidden");
     return;
-  }
+  } else productListEle.style.display = "grid";
+
   slicePaginationList = handleSlicePagination(productHandledList);
 
   renderProductPage();

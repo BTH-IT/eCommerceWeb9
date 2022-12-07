@@ -89,7 +89,8 @@ function renderOrdersManage(orderList = getLocalStorage("orderList")) {
     })
     .join("");
 
-  ordersManage.innerHTML = ordersHTML;
+  ordersManage.innerHTML =
+    ordersHTML || "<div class='empty'>There're no orders</div>";
 
   const selectOrderList = ordersManage.querySelectorAll(
     ".orders-manage__select"

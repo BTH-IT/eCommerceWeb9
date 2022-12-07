@@ -7,6 +7,7 @@ import {
 import { reset } from "./handleFormProduct.js";
 import { renderProductsManage } from "./productManage.js";
 
+const searchName = queryElement(".products__filter-user input");
 const currentUser = getLocalStorage("currentUser");
 
 if (currentUser && currentUser?.isAdmin) {
@@ -25,10 +26,18 @@ if (currentUser && currentUser?.isAdmin) {
   const statsControl = queryElement(".side-bar__item.stats-control");
   const ordersControl = queryElement(".side-bar__item.orders-control");
 
-  const usersMobileControl = queryElement(".side-bar-mobile__item.users-control");
-  const productsMobileControl = queryElement(".side-bar-mobile__item.products-control");
-  const statsMobileControl = queryElement(".side-bar-mobile__item.stats-control");
-  const ordersMobileControl = queryElement(".side-bar-mobile__item.orders-control");
+  const usersMobileControl = queryElement(
+    ".side-bar-mobile__item.users-control"
+  );
+  const productsMobileControl = queryElement(
+    ".side-bar-mobile__item.products-control"
+  );
+  const statsMobileControl = queryElement(
+    ".side-bar-mobile__item.stats-control"
+  );
+  const ordersMobileControl = queryElement(
+    ".side-bar-mobile__item.orders-control"
+  );
 
   const createProductBtn = queryElement(".products .products__btn");
   const backProductManageBtn = queryElement(".products-form .products__btn");
@@ -82,7 +91,7 @@ if (currentUser && currentUser?.isAdmin) {
 
     overlay.style.display = "none";
     sideBarMobile.style.display = "none";
-  })
+  });
 
   productsControl.addEventListener("click", () => {
     if (productsControl.className.includes("active")) {
@@ -127,7 +136,7 @@ if (currentUser && currentUser?.isAdmin) {
 
     overlay.style.display = "none";
     sideBarMobile.style.display = "none";
-  })
+  });
 
   ordersControl.addEventListener("click", () => {
     if (ordersControl.className.includes("active")) {
@@ -216,7 +225,7 @@ if (currentUser && currentUser?.isAdmin) {
     ordersManage.classList.add("hidden");
 
     overlay.style.display = "none";
-    sideBarMobile.style.display = "none"
+    sideBarMobile.style.display = "none";
   });
 
   createProductBtn.addEventListener("click", () => {
@@ -224,6 +233,7 @@ if (currentUser && currentUser?.isAdmin) {
     updateBtn.classList.add("hidden");
     productsForm.classList.remove("hidden");
     productsManage.classList.add("hidden");
+    searchName.value = "";
     reset();
   });
 
@@ -234,6 +244,7 @@ if (currentUser && currentUser?.isAdmin) {
     errorList.forEach((error) => {
       error.innerText = "";
     });
+
     renderProductsManage();
   });
 
@@ -245,17 +256,17 @@ if (currentUser && currentUser?.isAdmin) {
   sideBarMobileIcon.addEventListener("click", () => {
     overlay.style.display = "block";
     sideBarMobile.style.display = "block";
-  })
+  });
 
   overlay.addEventListener("click", () => {
     overlay.style.display = "none";
     sideBarMobile.style.display = "none";
-  })
+  });
 
   sideBarMobileClose.addEventListener("click", () => {
     overlay.style.display = "none";
     sideBarMobile.style.display = "none";
-  })
+  });
 
   setInterval(() => {
     desc.style.height = "48px";

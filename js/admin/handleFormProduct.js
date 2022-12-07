@@ -15,7 +15,7 @@ const imageSecondary = queryElement("#image-secondary");
 const desc = queryElement("#desc");
 const price = queryElement("#price");
 const salePercent = queryElement("#sale-percent");
-const select = queryElement("select");
+const select = queryElement(".input select");
 const createBtn = queryElement(".create");
 const updateBtn = queryElement(".update");
 const labelPrimary = queryElement("label[for='image-primary']");
@@ -36,6 +36,7 @@ select.innerHTML = typeSelectList
   .join("");
 
 function renderProductForm(id) {
+  updateBtn.dataset.id = id;
   updateBtn.classList.remove("hidden");
   createBtn.classList.add("hidden");
 
@@ -53,72 +54,74 @@ function renderProductForm(id) {
   labelSecondary.innerHTML = `
     <img src=${productList[productIdx].imageSecondary}>
   `;
+}
 
-  function handleUpdate() {
-    const formValidation = [];
-    formValidation.push(name, price, desc, select, salePercent);
-    let isError = false;
-    formValidation.forEach((validate) => {
-      if (validation(validate)) isError = true;
-    });
+updateBtn.addEventListener("click", () => {
+  const formValidation = [];
+  formValidation.push(name, price, desc, select, salePercent);
+  let isError = false;
+  formValidation.forEach((validate) => {
+    if (validation(validate)) isError = true;
+  });
 
-    if (isError) return;
+  if (isError) return;
 
-    productList[productIdx].name = name.value;
-    productList[productIdx].prePrice = Number(price.value);
-    productList[productIdx].type = select.value;
-    productList[productIdx].desc = desc.value;
+  const id = Number(updateBtn.dataset.id);
+  const productList = getLocalStorage("productList");
+  const productIdx = productList.findIndex((product) => product.id === id);
 
-    if (salePercent.value) {
-      productList[productIdx]["salePercent"] = Number(salePercent.value);
-      productList[productIdx].salePrice = (
-        Number(price.value) -
-        (Number(price.value) * Number(salePercent.value)) / 100
-      ).toFixed(2);
-    }
+  productList[productIdx].name = name.value;
+  productList[productIdx].prePrice = Number(price.value);
+  productList[productIdx].type = select.value;
+  productList[productIdx].desc = desc.value;
 
-    setLocalStorage("productList", productList);
-
-    const { files: filesPrimary } = imagePrimary;
-    const { files: filesSecondary } = imageSecondary;
-
-    if (filesPrimary[0]) {
-      const readerPrimary = new FileReader(imagePrimary);
-      readerPrimary.addEventListener("load", () => {
-        productList[productIdx]["imagePrimary"] = readerPrimary.result;
-        setLocalStorage("productList", productList);
-        renderProductsManage();
-      });
-      readerPrimary.readAsDataURL(imagePrimary.files[0]);
-    }
-
-    if (filesSecondary[0]) {
-      const readerSecondary = new FileReader(imageSecondary);
-      readerSecondary.addEventListener("load", () => {
-        productList[productIdx]["imageSecondary"] = readerSecondary.result;
-        setLocalStorage("productList", productList);
-        renderProductsManage();
-      });
-      readerSecondary.readAsDataURL(imageSecondary.files[0]);
-    }
-
-    productsForm.classList.add("hidden");
-    productsManage.classList.remove("hidden");
-
-    errorList.forEach((error) => {
-      error.innerText = "";
-    });
-
-    toast({
-      title: "Successfully!!!",
-      message: "Update done",
-      type: "success",
-      duration: 1000,
-    });
+  if (salePercent.value) {
+    productList[productIdx]["salePercent"] = Number(salePercent.value);
+    productList[productIdx].salePrice = (
+      Number(price.value) -
+      (Number(price.value) * Number(salePercent.value)) / 100
+    ).toFixed(2);
   }
 
-  updateBtn.addEventListener("click", handleUpdate);
-}
+  setLocalStorage("productList", productList);
+
+  const { files: filesPrimary } = imagePrimary;
+  const { files: filesSecondary } = imageSecondary;
+
+  if (filesPrimary[0]) {
+    const readerPrimary = new FileReader(imagePrimary);
+    readerPrimary.addEventListener("load", () => {
+      productList[productIdx]["imagePrimary"] = readerPrimary.result;
+      setLocalStorage("productList", productList);
+      renderProductsManage();
+    });
+    readerPrimary.readAsDataURL(imagePrimary.files[0]);
+  }
+
+  if (filesSecondary[0]) {
+    const readerSecondary = new FileReader(imageSecondary);
+    readerSecondary.addEventListener("load", () => {
+      productList[productIdx]["imageSecondary"] = readerSecondary.result;
+      setLocalStorage("productList", productList);
+      renderProductsManage();
+    });
+    readerSecondary.readAsDataURL(imageSecondary.files[0]);
+  }
+
+  productsForm.classList.add("hidden");
+  productsManage.classList.remove("hidden");
+
+  errorList.forEach((error) => {
+    error.innerText = "";
+  });
+
+  toast({
+    title: "Successfully!!!",
+    message: "Update done",
+    type: "success",
+    duration: 1000,
+  });
+});
 
 function reset() {
   name.value = "";

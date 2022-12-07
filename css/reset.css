@@ -101,4 +101,10 @@ b {
 	font-weight: 600;
 }
 
+.empty {
+  text-align: center;
+  font-size: 2rem;
+  opacity: 0.4;
+}
+
 

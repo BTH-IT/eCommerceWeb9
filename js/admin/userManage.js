@@ -26,7 +26,8 @@ function renderUserList() {
     })
     .join("");
 
-  usersManage.innerHTML = userListHTML;
+  usersManage.innerHTML =
+    userListHTML || "<div class='empty'>There're no users</div>";
 
   const deleteUserListBtn = usersManage.querySelectorAll(".btn--delete");
 
