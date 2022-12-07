@@ -175,7 +175,9 @@ function filterOrdersManage() {
 
   if (searchId.value && Number(searchId.value) !== "NaN") {
     const id = Number(searchId.value);
-    filterOrder = filterOrder.filter((order) => order.userId === id);
+    filterOrder = filterOrder.filter((order) =>
+      String(order.userId).includes(String(id))
+    );
   }
 
   renderOrdersManage(filterOrder);
