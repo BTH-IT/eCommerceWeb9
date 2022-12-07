@@ -1,7 +1,7 @@
 const productList = [
   {
     id: 1,
-    name: "Áo hoodie 1",
+    name: "hoodie 1",
     prePrice: 10,
     salePercent: 13,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
@@ -13,7 +13,7 @@ const productList = [
   },
   {
     id: 2,
-    name: "Áo Hoodie 2",
+    name: "Hoodie 2",
     prePrice: 10,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "Jacket & Hoodie",
@@ -24,7 +24,7 @@ const productList = [
   },
   {
     id: 3,
-    name: "Áo Khoác 1",
+    name: "Jacket 1",
     prePrice: 10,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "Jacket & Hoodie",
@@ -35,7 +35,7 @@ const productList = [
   },
   {
     id: 4,
-    name: "Áo Khoác 2",
+    name: "Jacket 2",
     prePrice: 15,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "Jacket & Hoodie",
@@ -46,7 +46,7 @@ const productList = [
   },
   {
     id: 5,
-    name: "Áo Khoác 3",
+    name: "Jacket 3",
     prePrice: 15,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
     type: "Jacket & Hoodie",
@@ -57,7 +57,7 @@ const productList = [
   },
   {
     id: 6,
-    name: "Áo Hoodie 3",
+    name: "Hoodie 3",
     prePrice: 12,
     salePercent: 17,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
@@ -69,7 +69,7 @@ const productList = [
   },
   {
     id: 7,
-    name: "Áo Hoodie 4",
+    name: "Hoodie 4",
     prePrice: 8,
     salePercent: 13,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
@@ -81,7 +81,7 @@ const productList = [
   },
   {
     id: 8,
-    name: "ÁO Khoác 4",
+    name: "Jacket 4",
     prePrice: 9,
     salePercent: 13,
     desc: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
@@ -93,7 +93,7 @@ const productList = [
   },
   {
     id: 9,
-    name: "ÁO THUN IN HÌNH ĐẸP 1",
+    name: "beautiful shirt 1",
     prePrice: 5,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "T-shirt",
@@ -104,7 +104,7 @@ const productList = [
   },
   {
     id: 10,
-    name: "ÁO THUN IN HÌNH ĐẸP 2",
+    name: "beautiful shirt 2",
     prePrice: 5,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "T-shirt",
@@ -115,7 +115,7 @@ const productList = [
   },
   {
     id: 11,
-    name: "ÁO THUN IN HÌNH ĐẸP 3",
+    name: "beautiful shirt 3",
     prePrice: 5,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "T-shirt",
@@ -126,7 +126,7 @@ const productList = [
   },
   {
     id: 12,
-    name: "ÁO THUN IN HÌNH ĐẸP 4",
+    name: "beautiful shirt 4",
     prePrice: 11,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "T-shirt",
@@ -137,7 +137,7 @@ const productList = [
   },
   {
     id: 13,
-    name: "ÁO THUN IN HÌNH ĐẸP 5",
+    name: "beautiful shirt 5",
     prePrice: 11,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "T-shirt",
@@ -148,7 +148,7 @@ const productList = [
   },
   {
     id: 14,
-    name: "ÁO THUN IN HÌNH ĐẸP 6",
+    name: "beautiful shirt 6",
     prePrice: 5,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "T-shirt",
@@ -159,7 +159,7 @@ const productList = [
   },
   {
     id: 15,
-    name: "ÁO THUN IN HÌNH ĐẸP 7",
+    name: "beautiful shirt 7",
     prePrice: 5,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "T-shirt",
@@ -170,7 +170,7 @@ const productList = [
   },
   {
     id: 16,
-    name: "ÁO THUN IN HÌNH ĐẸP 8",
+    name: "beautiful shirt 8",
     prePrice: 5,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "T-shirt",
@@ -181,7 +181,7 @@ const productList = [
   },
   {
     id: 17,
-    name: "ÁO THUN IN HÌNH ĐẸP 9",
+    name: "beautiful shirt 9",
     prePrice: 5,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "T-shirt",
@@ -192,7 +192,7 @@ const productList = [
   },
   {
     id: 18,
-    name: "ÁO THUN IN HÌNH ĐẸP 10",
+    name: "beautiful shirt 10",
     prePrice: 5,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "T-shirt",
@@ -203,7 +203,7 @@ const productList = [
   },
   {
     id: 19,
-    name: "ÁO THUN IN HÌNH ĐẸP 11",
+    name: "beautiful shirt 11",
     prePrice: 5,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "T-shirt",
@@ -214,7 +214,7 @@ const productList = [
   },
   {
     id: 20,
-    name: "ÁO THUN IN HÌNH ĐẸP 12",
+    name: "beautiful shirt 12",
     prePrice: 4,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "T-shirt",
@@ -225,7 +225,7 @@ const productList = [
   },
   {
     id: 21,
-    name: "ÁO THUN IN HÌNH ĐẸP 13",
+    name: "beautiful shirt 13",
     prePrice: 4,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "T-shirt",
@@ -236,7 +236,7 @@ const productList = [
   },
   {
     id: 22,
-    name: "QUẦN JEANS ỐNG RỘNG ĐẸP 1",
+    name: "Wide-Legged Jeans Pant 1",
     prePrice: 20,
     salePercent: 20,
 
@@ -249,7 +249,7 @@ const productList = [
   },
   {
     id: 23,
-    name: "Quần Baggy Kaki 1",
+    name: "Baggy Kaki Pant 1",
     prePrice: 18,
     salePercent: 20,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
@@ -261,7 +261,7 @@ const productList = [
   },
   {
     id: 24,
-    name: "Quần Baggy Kaki 2",
+    name: "Baggy Kaki Pant 2",
     prePrice: 16,
     salePercent: 20,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
@@ -273,7 +273,7 @@ const productList = [
   },
   {
     id: 25,
-    name: "QUẦN Jogger 1",
+    name: "Jogger pant 1",
     prePrice: 20,
     salePercent: 19,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
@@ -285,7 +285,7 @@ const productList = [
   },
   {
     id: 26,
-    name: "QUẦN Jogger 2",
+    name: "Jogger pant 2",
     prePrice: 20,
     salePercent: 15,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
@@ -297,7 +297,7 @@ const productList = [
   },
   {
     id: 27,
-    name: "QUẦN Jogger 3",
+    name: "Jogger pant 3",
     prePrice: 20,
     salePercent: 15,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
@@ -309,7 +309,7 @@ const productList = [
   },
   {
     id: 28,
-    name: "QUẦN Jpgger 4",
+    name: "Jogger pant 4",
     prePrice: 25,
     salePercent: 15,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
@@ -321,7 +321,7 @@ const productList = [
   },
   {
     id: 29,
-    name: "QUẦN Jogger 4",
+    name: "Jogger pant 4",
     prePrice: 20,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "Pant",
@@ -332,7 +332,7 @@ const productList = [
   },
   {
     id: 30,
-    name: "QUẦN Jogger 5",
+    name: "Jogger pant 5",
     prePrice: 21,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "Pant",
@@ -343,7 +343,7 @@ const productList = [
   },
   {
     id: 31,
-    name: "QUẦN Jogger 6",
+    name: "Jogger pant 6",
     prePrice: 13,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
     type: "Pant",
@@ -354,7 +354,7 @@ const productList = [
   },
   {
     id: 32,
-    name: "QUẦN Jogger 7",
+    name: "Jogger pant 7",
     prePrice: 14,
     salePercent: 20,
     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur dolorem nihil enim, cumque asperiores illum laboriosam ratione fugiat ducimus autem labore sed beatae dolore quam, accusantium ipsum explicabo doloremque voluptate",
