@@ -165,11 +165,21 @@
     </section>
     <section class="stats hidden">
       <h2 class="stats__heading">revenue statistics</h2>
+      <div class="stats__filter-date">
+        <div>
+          <label for="dateFrom">From: </label>
+          <input type="date" name="from" id="dateFrom">
+        </div>
+        <div>
+          <label for="dateTo">To: </label>
+          <input type="date" name="to" id="dateTo">
+        </div>
+      </div>
       <div class="stats__list">
       </div>
       <hr>
       <div class="stats-all-total">
-        Total All: <span>0$</span>
+        Total All: <span></span>
       </div>
     </section>
     <section class="orders hidden">
@@ -189,6 +199,11 @@
         </div>
         <div class="orders__filter-type">
           <span>Type: </span>
+          <select>
+          </select>
+        </div>
+        <div class="orders__filter-status">
+          <span>Status: </span>
           <select>
           </select>
         </div>
@@ -217,8 +232,8 @@
   <script type="module" src="./js/admin/admin.js"></script>
   <script type="module" src="./js/admin/userManage.js"></script>
   <script type="module" src="./js/admin/productManage.js"></script>
-  <script type="module" src="./js/admin/statsManage.js"></script>
   <script type="module" src="./js/admin/orderManage.js"></script>
+  <script type="module" src="./js/admin/statsManage.js"></script>
   <script type="module" src="./js/user/modal.js"></script>
   <script type="module" src="./js/admin/handleFormProduct.js"></script>
 </body>

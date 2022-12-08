@@ -1,16 +1,22 @@
 import { getLocalStorage, queryElement } from "../constant.js";
 import { typeProductList } from "../data.js";
+import { filterDate } from "./orderManage.js";
 
 const statsManage = queryElement(".stats__list");
 const statTotal = queryElement(".stats-all-total span");
+const dateFrom = queryElement(".stats__filter-date #dateFrom");
+const dateTo = queryElement(".stats__filter-date #dateTo");
 
 function renderStatsManage() {
   const statsList = getLocalStorage("statsList");
   const stats = [];
+  const statsFilter = statsList.filter((order) =>
+    filterDate(order.createdAt, dateFrom.value, dateTo.value)
+  );
 
   if (statsList) {
     typeProductList.forEach((type) => {
-      const typeList = statsList.filter(
+      const typeList = statsFilter.filter(
         (order) => order.type.toLowerCase() === type.toLowerCase()
       );
       let count = 0;
@@ -47,13 +53,16 @@ function renderStatsManage() {
 
     statsManage.innerHTML = statsHTML;
 
-    statTotal.innerText = stats.reduce(
-      (pre, curr) => pre + Number(curr.total),
-      0
-    );
+    statTotal.innerText = `${stats
+      .reduce((pre, curr) => pre + Number(curr.total), 0)
+      .toFixed(2)}$`;
   }
 }
 
 renderStatsManage();
+
+dateFrom.addEventListener("change", renderStatsManage);
+
+dateTo.addEventListener("change", renderStatsManage);
 
 export { renderStatsManage };

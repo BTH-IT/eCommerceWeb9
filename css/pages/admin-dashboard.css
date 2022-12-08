@@ -302,14 +302,21 @@
   justify-content: space-between;
 }
 
-.orders__filter-date {
+.orders__filter-date,
+.stats__filter-date {
   display: flex;
   gap: 10px;
 }
 
-label[for="dateFrom"],
-label[for="dateTo"],
+.stats__filter-date {
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.orders__filter-date label[for="dateFrom"],
+.orders__filter-date label[for="dateTo"],
 .orders__filter-type span,
+.orders__filter-status span,
 .orders__filter-user span,
 .products__filter-type span,
 .products__filter-user span {
@@ -318,20 +325,28 @@ label[for="dateTo"],
 }
 
 .orders__filter-date div,
+.stats__filter-date div,
 .orders__filter-user,
 .orders__filter-type,
+.orders__filter-status,
 .products__filter-type,
 .products__filter-user {
   display: flex;
   align-items: center;
 }
 
-.orders__filter-date input{
+.stats__filter-date div {
+  gap: 10px;
+}
+
+.orders__filter-date input,
+.stats__filter-date input {
   padding: 5px;
   width: 100%;
 }
 
 .orders__filter-type select,
+.orders__filter-status select,
 .products__filter-type select {
   font-size: 1rem;
   padding: 5px;
@@ -431,6 +446,42 @@ select {
   padding: 30px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .orders__filter-date {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .orders__filter-type,
+  .orders__filter-status,
+  .orders__filter-user {
+    width: 100%;
+  }
+
+  .orders__filter-type select,
+  .orders__filter-status select,
+  .orders__filter-user input {
+    flex: 1;
+    width: 100%;
+  }
+
+  .orders__filter-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .orders__filter-date div {
+    display: flex;
+    align-items: center;
+  }
+
+  .orders__filter-date div input {
+    flex: 1;
+  }
+}
+
 /* Tablet */
 @media only screen and (max-width: 992px) {
 
@@ -449,38 +500,6 @@ select {
 
   .stats-all-total {
     font-size: 1.4rem;
-  }
-
-  .orders__filter-date {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .orders__filter-type,
-  .orders__filter-user {
-    width: 100%;
-  }
-
-  .orders__filter-type select,
-  .orders__filter-user input {
-    flex: 1;
-    width: 100%;
-  }
-
-  .orders__filter-container {
-    flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
-  }
-
-  .orders__filter-date div{
-    display: flex;
-    align-items: center;
-  }
-
-  .orders__filter-date div input {
-    flex: 1;
   }
 }
 
@@ -641,6 +660,20 @@ select {
   .products__filter-type select,
   .products__filter-user input {
     width: 100%;
+  }
+
+  .stats__filter-date {
+    flex-direction: column;
+  }
+
+  .stats__filter-date label[for="dateFrom"],
+  .stats__filter-date label[for="dateTo"] {
+    display: inline-block;
+    min-width: 65px;
+  }
+
+  .stats__filter-date input {
+    flex: 1
   }
 }
 

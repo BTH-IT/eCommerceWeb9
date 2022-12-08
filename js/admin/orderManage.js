@@ -10,14 +10,21 @@ import { renderStatsManage } from "./statsManage.js";
 
 const orders = queryElement(".orders");
 const ordersManage = orders.querySelector(".orders-manage");
-const dateFrom = orders.querySelector("#dateFrom");
-const dateTo = orders.querySelector("#dateTo");
+const dateFrom = orders.querySelector(".orders__filter-date #dateFrom");
+const dateTo = orders.querySelector(".orders__filter-date #dateTo");
 const selectType = orders.querySelector(".orders__filter-type select");
+const selectStatus = orders.querySelector(".orders__filter-status select");
 const searchId = orders.querySelector(".orders__filter-user input");
 const modalListBtn = queryAllElement(".btn__modal");
 const modal = queryElement(".modal");
 
 const typeList = ["All", ...typeProductList];
+const statusList = ["All", "Non-delivery", "Delivering"];
+
+selectStatus.innerHTML = statusList.map(
+  (type, idx) =>
+    `<option value="${type}" ${idx === 0 ? "selected" : ""}>${type}</option>`
+);
 
 selectType.innerHTML = typeList.map(
   (type, idx) =>
@@ -156,7 +163,7 @@ function formatDate(date) {
   return Number(dateArr[1]) + "/" + Number(dateArr[2]) + "/" + dateArr[0];
 }
 
-function filterDate(date, from, to) {
+export function filterDate(date, from, to) {
   if (!from && !to) return true;
   if (from && !to) return date >= formatDate(from);
   if (!from && to) return date <= formatDate(to);
@@ -165,12 +172,20 @@ function filterDate(date, from, to) {
 
 function filterOrdersManage() {
   const orderList = getLocalStorage("orderList");
+
   let filterOrder = orderList.filter((order) =>
     filterDate(order.createdAt, dateFrom.value, dateTo.value)
   );
+
   if (selectType.value !== "All") {
     filterOrder = filterOrder.filter(
       (order) => order.type === selectType.value
+    );
+  }
+
+  if (selectStatus.value !== "All") {
+    filterOrder = filterOrder.filter(
+      (order) => order.statusDelivery === selectStatus.value.toLowerCase()
     );
   }
 
@@ -203,6 +218,8 @@ dateFrom.addEventListener("change", filterOrdersManage);
 dateTo.addEventListener("change", filterOrdersManage);
 
 selectType.addEventListener("change", filterOrdersManage);
+
+selectStatus.addEventListener("change", filterOrdersManage);
 
 searchId.addEventListener("keyup", filterOrdersManage);
 
