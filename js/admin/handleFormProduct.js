@@ -121,6 +121,8 @@ updateBtn.addEventListener("click", () => {
     type: "success",
     duration: 1000,
   });
+
+  renderProductsManage();
 });
 
 function reset() {
@@ -198,6 +200,7 @@ function handleCreate() {
   readerSecondary.addEventListener("load", () => {
     productList[productIdx]["imageSecondary"] = readerSecondary.result;
     setLocalStorage("productList", productList);
+    renderProductsManage();
   });
 
   readerPrimary.readAsDataURL(imagePrimary.files[0]);
@@ -218,6 +221,8 @@ function handleCreate() {
     type: "success",
     duration: 1000,
   });
+
+  renderProductsManage();
 }
 
 name.addEventListener("change", () => validation(name));
